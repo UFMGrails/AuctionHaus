@@ -1,0 +1,7 @@
+Testsuite: auctionhaus.BiddingTests
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 3.789 sec
+------------- Standard Error -----------------
+--Output from testListingHasListOfBids--
+------------- ---------------- ---------------
+
+Testcase: testListingHasListOfBids took 3.712 sec

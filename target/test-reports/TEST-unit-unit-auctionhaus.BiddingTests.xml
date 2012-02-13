@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="ujjwal-PC" name="auctionhaus.BiddingTests" tests="1" time="3.789" timestamp="2012-02-12T23:46:59">
+  <properties />
+  <testcase classname="auctionhaus.BiddingTests" name="testListingHasListOfBids" time="3.712" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[--Output from testListingHasListOfBids--
+]]></system-err>
+</testsuite>
