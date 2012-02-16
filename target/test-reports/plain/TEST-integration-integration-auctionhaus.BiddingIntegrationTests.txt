@@ -1,0 +1,23 @@
+Testsuite: auctionhaus.BiddingIntegrationTests
+Tests run: 2, Failures: 0, Errors: 2, Time elapsed: 0.733 sec
+------------- Standard Output ---------------
+--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
+--Output from testBiddingIsSavedWhenListingIsSaved--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
+--Output from testBiddingIsSavedWhenListingIsSaved--
+------------- ---------------- ---------------
+
+Testcase: testBidAmountIsFiftyCentHigherThanPreviousBid took 0.687 sec
+	Caused an ERROR
+Cannot get property 'winningBidPrice' on null object
+java.lang.NullPointerException: Cannot get property 'winningBidPrice' on null object
+	at auctionhaus.BiddingIntegrationTests.testBidAmountIsFiftyCentHigherThanPreviousBid(BiddingIntegrationTests.groovy:42)
+
+Testcase: testBiddingIsSavedWhenListingIsSaved took 0.046 sec
+	Caused an ERROR
+Cannot invoke method addToBiddings() on null object
+java.lang.NullPointerException: Cannot invoke method addToBiddings() on null object
+	at auctionhaus.BiddingIntegrationTests.testBiddingIsSavedWhenListingIsSaved(BiddingIntegrationTests.groovy:29)
+

@@ -1,0 +1,34 @@
+Testsuite: auctionhaus.ListingTests
+Tests run: 9, Failures: 0, Errors: 0, Time elapsed: 0.281 sec
+------------- Standard Output ---------------
+--Output from testNameIsRequired--
+--Output from testNameIsNotBlank--
+--Output from testLengthOfName--
+--Output from testDateNotNull--
+--Output from testDateIsInFuture--
+--Output from testStartingPriceIsRequired--
+--Output from testStartingPriceIsValid--
+--Output from testSellerIsRequired--
+--Output from testLengthOfDescription--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testNameIsRequired--
+--Output from testNameIsNotBlank--
+--Output from testLengthOfName--
+--Output from testDateNotNull--
+--Output from testDateIsInFuture--
+--Output from testStartingPriceIsRequired--
+--Output from testStartingPriceIsValid--
+--Output from testSellerIsRequired--
+--Output from testLengthOfDescription--
+------------- ---------------- ---------------
+
+Testcase: testNameIsRequired took 0.032 sec
+Testcase: testNameIsNotBlank took 0.015 sec
+Testcase: testLengthOfName took 0.031 sec
+Testcase: testDateNotNull took 0.031 sec
+Testcase: testDateIsInFuture took 0.015 sec
+Testcase: testStartingPriceIsRequired took 0.016 sec
+Testcase: testStartingPriceIsValid took 0.016 sec
+Testcase: testSellerIsRequired took 0.016 sec
+Testcase: testLengthOfDescription took 0.031 sec

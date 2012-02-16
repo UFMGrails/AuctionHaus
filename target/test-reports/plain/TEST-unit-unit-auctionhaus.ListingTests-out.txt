@@ -1,0 +1,9 @@
+--Output from testNameIsRequired--
+--Output from testNameIsNotBlank--
+--Output from testLengthOfName--
+--Output from testDateNotNull--
+--Output from testDateIsInFuture--
+--Output from testStartingPriceIsRequired--
+--Output from testStartingPriceIsValid--
+--Output from testSellerIsRequired--
+--Output from testLengthOfDescription--

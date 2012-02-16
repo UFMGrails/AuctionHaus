@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="ujjwal-PC" name="auctionhaus.BiddingTests" tests="1" time="3.789" timestamp="2012-02-12T23:46:59">
+<testsuite errors="2" failures="0" hostname="user-HP" name="auctionhaus.BiddingTests" tests="5" time="1.653" timestamp="2012-02-15T22:47:42">
   <properties />
-  <testcase classname="auctionhaus.BiddingTests" name="testListingHasListOfBids" time="3.712" />
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[--Output from testListingHasListOfBids--
+  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToHaveABidder" time="1.139">
+    <error message="No such property: dateEnded for class: auctionhaus.Listing" type="groovy.lang.MissingPropertyException">groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
+	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
+	at auctionhaus.BiddingTests.testBidsAreRequiredToHaveABidder(BiddingTests.groovy:50)
+</error>
+  </testcase>
+  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToBeForListing" time="0.062" />
+  <testcase classname="auctionhaus.BiddingTests" name="testAmountIsRequired" time="0.031" />
+  <testcase classname="auctionhaus.BiddingTests" name="testDateCreatedIsAssigned" time="0.047">
+    <error message="No such property: dateEnded for class: auctionhaus.Listing" type="groovy.lang.MissingPropertyException">groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
+	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
+	at auctionhaus.BiddingTests.testDateCreatedIsAssigned(BiddingTests.groovy:38)
+</error>
+  </testcase>
+  <testcase classname="auctionhaus.BiddingTests" name="testListingHasListOfBids" time="0.265" />
+  <system-out><![CDATA[--Output from testBidsAreRequiredToHaveABidder--
+--Output from testBidsAreRequiredToBeForListing--
+--Output from testAmountIsRequired--
+--Output from testDateCreatedIsAssigned--
+--Output from testListingHasListOfBids--
+]]></system-out>
+  <system-err><![CDATA[--Output from testBidsAreRequiredToHaveABidder--
+--Output from testBidsAreRequiredToBeForListing--
+--Output from testAmountIsRequired--
+--Output from testDateCreatedIsAssigned--
+--Output from testListingHasListOfBids--
 ]]></system-err>
 </testsuite>

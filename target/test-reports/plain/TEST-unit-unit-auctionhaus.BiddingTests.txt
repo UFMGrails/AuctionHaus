@@ -1,7 +1,38 @@
 Testsuite: auctionhaus.BiddingTests
-Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 3.789 sec
+Tests run: 5, Failures: 0, Errors: 2, Time elapsed: 1.653 sec
+------------- Standard Output ---------------
+--Output from testBidsAreRequiredToHaveABidder--
+--Output from testBidsAreRequiredToBeForListing--
+--Output from testAmountIsRequired--
+--Output from testDateCreatedIsAssigned--
+--Output from testListingHasListOfBids--
+------------- ---------------- ---------------
 ------------- Standard Error -----------------
+--Output from testBidsAreRequiredToHaveABidder--
+--Output from testBidsAreRequiredToBeForListing--
+--Output from testAmountIsRequired--
+--Output from testDateCreatedIsAssigned--
 --Output from testListingHasListOfBids--
 ------------- ---------------- ---------------
 
-Testcase: testListingHasListOfBids took 3.712 sec
+Testcase: testBidsAreRequiredToHaveABidder took 1.123 sec
+	Caused an ERROR
+No such property: dateEnded for class: auctionhaus.Listing
+groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
+	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
+	at auctionhaus.BiddingTests.testBidsAreRequiredToHaveABidder(BiddingTests.groovy:50)
+
+Testcase: testBidsAreRequiredToBeForListing took 0.062 sec
+Testcase: testAmountIsRequired took 0.031 sec
+Testcase: testDateCreatedIsAssigned took 0.047 sec
+	Caused an ERROR
+No such property: dateEnded for class: auctionhaus.Listing
+groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
+	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
+	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
+	at auctionhaus.BiddingTests.testDateCreatedIsAssigned(BiddingTests.groovy:38)
+
+Testcase: testListingHasListOfBids took 0.265 sec
