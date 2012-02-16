@@ -35,7 +35,7 @@
 </nav>
 </div>
 <div class="clear"></div>
-<div class="testsuite error">
+<div class="testsuite success">
 <div class="header">
 <h2>BiddingTests</h2>
 <h3>
@@ -43,39 +43,35 @@
                         5
                         tests
                     
-                        with
-                        2 errors
-                        .
+                        without a single error or failure!
                     </h3>
-</div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testBidsAreRequiredToHaveABidder">
-<div class="grid_3 alpha">
-<p>
-<span class="icon error"></span><b class="testname message error">testBidsAreRequiredToHaveABidder</b>
-</p>
-<p class="summary">Executed in 1.139 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo">
-<div class="details">
-<p>
-<b class="message">No such property: dateEnded for class: auctionhaus.Listing</b>
-</p>
-<pre>groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
-	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
-	at auctionhaus.BiddingTests.testBidsAreRequiredToHaveABidder(BiddingTests.groovy:50)
-</pre>
-</div>
-</div>
-<div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="testBidsAreRequiredToBeForListing">
 <div class="grid_3 alpha">
 <p>
 <span class="icon success"></span><b class="testname message success">testBidsAreRequiredToBeForListing</b>
 </p>
-<p class="summary">Executed in 0.062 seconds.</p>
+<p class="summary">Executed in 1.27 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testBidsAreRequiredToHaveABidder">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testBidsAreRequiredToHaveABidder</b>
+</p>
+<p class="summary">Executed in 0.047 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testDateCreatedIsAssigned">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testDateCreatedIsAssigned</b>
+</p>
+<p class="summary">Executed in 0.053 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -85,31 +81,9 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testAmountIsRequired</b>
 </p>
-<p class="summary">Executed in 0.031 seconds.</p>
+<p class="summary">Executed in 0.043 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testDateCreatedIsAssigned">
-<div class="grid_3 alpha">
-<p>
-<span class="icon error"></span><b class="testname message error">testDateCreatedIsAssigned</b>
-</p>
-<p class="summary">Executed in 0.047 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo">
-<div class="details">
-<p>
-<b class="message">No such property: dateEnded for class: auctionhaus.Listing</b>
-</p>
-<pre>groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
-	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
-	at auctionhaus.BiddingTests.testDateCreatedIsAssigned(BiddingTests.groovy:38)
-</pre>
-</div>
-</div>
 <div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="testListingHasListOfBids">
@@ -117,7 +91,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testListingHasListOfBids</b>
 </p>
-<p class="summary">Executed in 0.265 seconds.</p>
+<p class="summary">Executed in 1.188 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -125,19 +99,19 @@
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">--Output from testBidsAreRequiredToHaveABidder--
---Output from testBidsAreRequiredToBeForListing--
---Output from testAmountIsRequired--
+<pre class="stdout">--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
 --Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
 --Output from testListingHasListOfBids--
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
-<pre class="syserr">--Output from testBidsAreRequiredToHaveABidder--
---Output from testBidsAreRequiredToBeForListing--
---Output from testAmountIsRequired--
+<pre class="syserr">--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
 --Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
 --Output from testListingHasListOfBids--
 </pre>
 </div>

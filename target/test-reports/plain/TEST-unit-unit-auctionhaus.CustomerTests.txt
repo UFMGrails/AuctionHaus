@@ -1,28 +1,28 @@
 Testsuite: auctionhaus.CustomerTests
-Tests run: 7, Failures: 0, Errors: 0, Time elapsed: 0.905 sec
+Tests run: 7, Failures: 0, Errors: 0, Time elapsed: 0.463 sec
 ------------- Standard Output ---------------
 --Output from testPasswordIsBetweenRightSize--
---Output from testEmailIsRequired--
---Output from testPasswordIsRequired--
---Output from testDateCreatedIsRequired--
---Output from testPasswordIsBelowMax--
 --Output from testPasswordIsAboveMin--
 --Output from testEmailIsValid--
+--Output from testPasswordIsBelowMax--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
 ------------- ---------------- ---------------
 ------------- Standard Error -----------------
 --Output from testPasswordIsBetweenRightSize--
---Output from testEmailIsRequired--
---Output from testPasswordIsRequired--
---Output from testDateCreatedIsRequired--
---Output from testPasswordIsBelowMax--
 --Output from testPasswordIsAboveMin--
 --Output from testEmailIsValid--
+--Output from testPasswordIsBelowMax--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
 ------------- ---------------- ---------------
 
-Testcase: testPasswordIsBetweenRightSize took 0.702 sec
-Testcase: testEmailIsRequired took 0.016 sec
-Testcase: testPasswordIsRequired took 0.016 sec
-Testcase: testDateCreatedIsRequired took 0.031 sec
-Testcase: testPasswordIsBelowMax took 0.031 sec
-Testcase: testPasswordIsAboveMin took 0.016 sec
-Testcase: testEmailIsValid took 0.032 sec
+Testcase: testPasswordIsBetweenRightSize took 0.179 sec
+Testcase: testPasswordIsAboveMin took 0.037 sec
+Testcase: testEmailIsValid took 0.054 sec
+Testcase: testPasswordIsBelowMax took 0.028 sec
+Testcase: testDateCreatedIsRequired took 0.025 sec
+Testcase: testPasswordIsRequired took 0.036 sec
+Testcase: testEmailIsRequired took 0.025 sec

@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="2" failures="0" hostname="user-HP" name="auctionhaus.BiddingTests" tests="5" time="1.653" timestamp="2012-02-15T22:47:42">
+<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.BiddingTests" tests="5" time="2.709" timestamp="2012-02-16T00:40:44">
   <properties />
-  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToHaveABidder" time="1.139">
-    <error message="No such property: dateEnded for class: auctionhaus.Listing" type="groovy.lang.MissingPropertyException">groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
-	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
-	at auctionhaus.BiddingTests.testBidsAreRequiredToHaveABidder(BiddingTests.groovy:50)
-</error>
-  </testcase>
-  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToBeForListing" time="0.062" />
-  <testcase classname="auctionhaus.BiddingTests" name="testAmountIsRequired" time="0.031" />
-  <testcase classname="auctionhaus.BiddingTests" name="testDateCreatedIsAssigned" time="0.047">
-    <error message="No such property: dateEnded for class: auctionhaus.Listing" type="groovy.lang.MissingPropertyException">groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
-	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
-	at auctionhaus.BiddingTests.testDateCreatedIsAssigned(BiddingTests.groovy:38)
-</error>
-  </testcase>
-  <testcase classname="auctionhaus.BiddingTests" name="testListingHasListOfBids" time="0.265" />
-  <system-out><![CDATA[--Output from testBidsAreRequiredToHaveABidder--
---Output from testBidsAreRequiredToBeForListing--
---Output from testAmountIsRequired--
+  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToBeForListing" time="1.27" />
+  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToHaveABidder" time="0.047" />
+  <testcase classname="auctionhaus.BiddingTests" name="testDateCreatedIsAssigned" time="0.053" />
+  <testcase classname="auctionhaus.BiddingTests" name="testAmountIsRequired" time="0.043" />
+  <testcase classname="auctionhaus.BiddingTests" name="testListingHasListOfBids" time="1.188" />
+  <system-out><![CDATA[--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
 --Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
 --Output from testListingHasListOfBids--
 ]]></system-out>
-  <system-err><![CDATA[--Output from testBidsAreRequiredToHaveABidder--
---Output from testBidsAreRequiredToBeForListing--
---Output from testAmountIsRequired--
+  <system-err><![CDATA[--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
 --Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
 --Output from testListingHasListOfBids--
 ]]></system-err>
 </testsuite>

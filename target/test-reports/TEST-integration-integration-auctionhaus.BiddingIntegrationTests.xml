@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="2" failures="0" hostname="user-HP" name="auctionhaus.BiddingIntegrationTests" tests="2" time="0.733" timestamp="2012-02-15T22:47:58">
+<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.BiddingIntegrationTests" tests="2" time="1.093" timestamp="2012-02-16T00:41:05">
   <properties />
-  <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBidAmountIsFiftyCentHigherThanPreviousBid" time="0.687">
-    <error message="Cannot get property &apos;winningBidPrice&apos; on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot get property &apos;winningBidPrice&apos; on null object
-	at auctionhaus.BiddingIntegrationTests.testBidAmountIsFiftyCentHigherThanPreviousBid(BiddingIntegrationTests.groovy:42)
-</error>
-  </testcase>
-  <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBiddingIsSavedWhenListingIsSaved" time="0.046">
-    <error message="Cannot invoke method addToBiddings() on null object" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke method addToBiddings() on null object
-	at auctionhaus.BiddingIntegrationTests.testBiddingIsSavedWhenListingIsSaved(BiddingIntegrationTests.groovy:29)
-</error>
-  </testcase>
-  <system-out><![CDATA[--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
---Output from testBiddingIsSavedWhenListingIsSaved--
+  <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBiddingIsSavedWhenListingIsSaved" time="0.92" />
+  <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBidAmountIsFiftyCentHigherThanPreviousBid" time="0.165" />
+  <system-out><![CDATA[--Output from testBiddingIsSavedWhenListingIsSaved--
+--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
+2.00
 ]]></system-out>
-  <system-err><![CDATA[--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
---Output from testBiddingIsSavedWhenListingIsSaved--
+  <system-err><![CDATA[--Output from testBiddingIsSavedWhenListingIsSaved--
+--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
 ]]></system-err>
 </testsuite>

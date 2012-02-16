@@ -18,9 +18,7 @@
                         24
                         tests
                     
-                        with
-                        4 errors
-                        .
+                        without a single error or failure!
                     </p>
 </div>
 <div class="grid_2 omega">
@@ -43,7 +41,7 @@
 </nav>
 </div>
 <div class="clear"></div>
-<div class="testsuite error">
+<div class="testsuite success">
 <div class="header">
 <h2>BiddingIntegrationTests</h2>
 <h3>
@@ -51,66 +49,47 @@
                         2
                         tests
                     
-                        with
-                        2 errors
-                        .
+                        without a single error or failure!
                     </h3>
 </div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testBidAmountIsFiftyCentHigherThanPreviousBid">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testBiddingIsSavedWhenListingIsSaved">
 <div class="grid_3 alpha">
 <p>
-<span class="icon error"></span><b class="testname message error">testBidAmountIsFiftyCentHigherThanPreviousBid</b>
+<span class="icon success"></span><b class="testname message success">testBiddingIsSavedWhenListingIsSaved</b>
 </p>
-<p class="summary">Executed in 0.687 seconds.</p>
+<p class="summary">Executed in 0.92 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo">
-<div class="details">
-<p>
-<b class="message">Cannot get property 'winningBidPrice' on null object</b>
-</p>
-<pre>java.lang.NullPointerException: Cannot get property 'winningBidPrice' on null object
-	at auctionhaus.BiddingIntegrationTests.testBidAmountIsFiftyCentHigherThanPreviousBid(BiddingIntegrationTests.groovy:42)
-</pre>
-</div>
-</div>
+<div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testBiddingIsSavedWhenListingIsSaved">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testBidAmountIsFiftyCentHigherThanPreviousBid">
 <div class="grid_3 alpha">
 <p>
-<span class="icon error"></span><b class="testname message error">testBiddingIsSavedWhenListingIsSaved</b>
+<span class="icon success"></span><b class="testname message success">testBidAmountIsFiftyCentHigherThanPreviousBid</b>
 </p>
-<p class="summary">Executed in 0.046 seconds.</p>
+<p class="summary">Executed in 0.165 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo">
-<div class="details">
-<p>
-<b class="message">Cannot invoke method addToBiddings() on null object</b>
-</p>
-<pre>java.lang.NullPointerException: Cannot invoke method addToBiddings() on null object
-	at auctionhaus.BiddingIntegrationTests.testBiddingIsSavedWhenListingIsSaved(BiddingIntegrationTests.groovy:29)
-</pre>
-</div>
-</div>
+<div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
---Output from testBiddingIsSavedWhenListingIsSaved--
+<pre class="stdout">--Output from testBiddingIsSavedWhenListingIsSaved--
+--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
+2.00
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
-<pre class="syserr">--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
---Output from testBiddingIsSavedWhenListingIsSaved--
+<pre class="syserr">--Output from testBiddingIsSavedWhenListingIsSaved--
+--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
 </pre>
 </div>
 </div>
 <div class="clear"></div>
 </div>
-<div class="testsuite error">
+<div class="testsuite success">
 <div class="header">
 <h2>BiddingTests</h2>
 <h3>
@@ -118,39 +97,35 @@
                         5
                         tests
                     
-                        with
-                        2 errors
-                        .
+                        without a single error or failure!
                     </h3>
-</div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testBidsAreRequiredToHaveABidder">
-<div class="grid_3 alpha">
-<p>
-<span class="icon error"></span><b class="testname message error">testBidsAreRequiredToHaveABidder</b>
-</p>
-<p class="summary">Executed in 1.139 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo">
-<div class="details">
-<p>
-<b class="message">No such property: dateEnded for class: auctionhaus.Listing</b>
-</p>
-<pre>groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
-	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
-	at auctionhaus.BiddingTests.testBidsAreRequiredToHaveABidder(BiddingTests.groovy:50)
-</pre>
-</div>
-</div>
-<div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="testBidsAreRequiredToBeForListing">
 <div class="grid_3 alpha">
 <p>
 <span class="icon success"></span><b class="testname message success">testBidsAreRequiredToBeForListing</b>
 </p>
-<p class="summary">Executed in 0.062 seconds.</p>
+<p class="summary">Executed in 1.27 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testBidsAreRequiredToHaveABidder">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testBidsAreRequiredToHaveABidder</b>
+</p>
+<p class="summary">Executed in 0.047 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testDateCreatedIsAssigned">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testDateCreatedIsAssigned</b>
+</p>
+<p class="summary">Executed in 0.053 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -160,31 +135,9 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testAmountIsRequired</b>
 </p>
-<p class="summary">Executed in 0.031 seconds.</p>
+<p class="summary">Executed in 0.043 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testDateCreatedIsAssigned">
-<div class="grid_3 alpha">
-<p>
-<span class="icon error"></span><b class="testname message error">testDateCreatedIsAssigned</b>
-</p>
-<p class="summary">Executed in 0.047 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo">
-<div class="details">
-<p>
-<b class="message">No such property: dateEnded for class: auctionhaus.Listing</b>
-</p>
-<pre>groovy.lang.MissingPropertyException: No such property: dateEnded for class: auctionhaus.Listing
-	at auctionhaus.Bidding$__clinit__closure2_closure3.doCall(Bidding.groovy:22)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:75)
-	at org.grails.datastore.gorm.GormValidationApi.validate(GormValidationApi.groovy:116)
-	at auctionhaus.BiddingTests.testDateCreatedIsAssigned(BiddingTests.groovy:38)
-</pre>
-</div>
-</div>
 <div class="clear"></div>
 </div>
 <div class="testcase clearfix success grid_8 alpha omega" data-name="testListingHasListOfBids">
@@ -192,7 +145,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testListingHasListOfBids</b>
 </p>
-<p class="summary">Executed in 0.265 seconds.</p>
+<p class="summary">Executed in 1.188 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -200,19 +153,19 @@
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">--Output from testBidsAreRequiredToHaveABidder--
---Output from testBidsAreRequiredToBeForListing--
---Output from testAmountIsRequired--
+<pre class="stdout">--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
 --Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
 --Output from testListingHasListOfBids--
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
-<pre class="syserr">--Output from testBidsAreRequiredToHaveABidder--
---Output from testBidsAreRequiredToBeForListing--
---Output from testAmountIsRequired--
+<pre class="syserr">--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
 --Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
 --Output from testListingHasListOfBids--
 </pre>
 </div>
@@ -233,7 +186,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testEmailIsUnique</b>
 </p>
-<p class="summary">Executed in 0.047 seconds.</p>
+<p class="summary">Executed in 0.045 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -268,47 +221,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testPasswordIsBetweenRightSize</b>
 </p>
-<p class="summary">Executed in 0.702 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testEmailIsRequired">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">testEmailIsRequired</b>
-</p>
-<p class="summary">Executed in 0.016 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testPasswordIsRequired">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">testPasswordIsRequired</b>
-</p>
-<p class="summary">Executed in 0.016 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testDateCreatedIsRequired">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">testDateCreatedIsRequired</b>
-</p>
-<p class="summary">Executed in 0.031 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testPasswordIsBelowMax">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">testPasswordIsBelowMax</b>
-</p>
-<p class="summary">Executed in 0.031 seconds.</p>
+<p class="summary">Executed in 0.179 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -318,7 +231,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testPasswordIsAboveMin</b>
 </p>
-<p class="summary">Executed in 0.016 seconds.</p>
+<p class="summary">Executed in 0.037 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -328,7 +241,47 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testEmailIsValid</b>
 </p>
-<p class="summary">Executed in 0.032 seconds.</p>
+<p class="summary">Executed in 0.054 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testPasswordIsBelowMax">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testPasswordIsBelowMax</b>
+</p>
+<p class="summary">Executed in 0.028 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testDateCreatedIsRequired">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testDateCreatedIsRequired</b>
+</p>
+<p class="summary">Executed in 0.025 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testPasswordIsRequired">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testPasswordIsRequired</b>
+</p>
+<p class="summary">Executed in 0.036 seconds.</p>
+</div>
+<div class="grid_5 omega outputinfo"></div>
+<div class="clear"></div>
+</div>
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testEmailIsRequired">
+<div class="grid_3 alpha">
+<p>
+<span class="icon success"></span><b class="testname message success">testEmailIsRequired</b>
+</p>
+<p class="summary">Executed in 0.025 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -337,23 +290,23 @@
 <div class="sysout">
 <h2>Standard output</h2>
 <pre class="stdout">--Output from testPasswordIsBetweenRightSize--
---Output from testEmailIsRequired--
---Output from testPasswordIsRequired--
---Output from testDateCreatedIsRequired--
---Output from testPasswordIsBelowMax--
 --Output from testPasswordIsAboveMin--
 --Output from testEmailIsValid--
+--Output from testPasswordIsBelowMax--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
 <pre class="syserr">--Output from testPasswordIsBetweenRightSize--
---Output from testEmailIsRequired--
---Output from testPasswordIsRequired--
---Output from testDateCreatedIsRequired--
---Output from testPasswordIsBelowMax--
 --Output from testPasswordIsAboveMin--
 --Output from testEmailIsValid--
+--Output from testPasswordIsBelowMax--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
 </pre>
 </div>
 </div>
@@ -370,12 +323,12 @@
                         without a single error or failure!
                     </h3>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testNameIsRequired">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testLengthOfName">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">testNameIsRequired</b>
+<span class="icon success"></span><b class="testname message success">testLengthOfName</b>
 </p>
-<p class="summary">Executed in 0.032 seconds.</p>
+<p class="summary">Executed in 0.041 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -385,17 +338,17 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testNameIsNotBlank</b>
 </p>
-<p class="summary">Executed in 0.015 seconds.</p>
+<p class="summary">Executed in 0.027 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testLengthOfName">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testNameIsRequired">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">testLengthOfName</b>
+<span class="icon success"></span><b class="testname message success">testNameIsRequired</b>
 </p>
-<p class="summary">Executed in 0.031 seconds.</p>
+<p class="summary">Executed in 0.037 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -405,7 +358,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testDateNotNull</b>
 </p>
-<p class="summary">Executed in 0.031 seconds.</p>
+<p class="summary">Executed in 0.032 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -415,27 +368,27 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testDateIsInFuture</b>
 </p>
-<p class="summary">Executed in 0.015 seconds.</p>
+<p class="summary">Executed in 0.036 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testStartingPriceIsRequired">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testpriceStartedIsRequired">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">testStartingPriceIsRequired</b>
+<span class="icon success"></span><b class="testname message success">testpriceStartedIsRequired</b>
 </p>
-<p class="summary">Executed in 0.016 seconds.</p>
+<p class="summary">Executed in 0.027 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testStartingPriceIsValid">
+<div class="testcase clearfix success grid_8 alpha omega" data-name="testpriceStartedIsValid">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">testStartingPriceIsValid</b>
+<span class="icon success"></span><b class="testname message success">testpriceStartedIsValid</b>
 </p>
-<p class="summary">Executed in 0.016 seconds.</p>
+<p class="summary">Executed in 0.026 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -445,7 +398,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testSellerIsRequired</b>
 </p>
-<p class="summary">Executed in 0.016 seconds.</p>
+<p class="summary">Executed in 0.025 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -455,7 +408,7 @@
 <p>
 <span class="icon success"></span><b class="testname message success">testLengthOfDescription</b>
 </p>
-<p class="summary">Executed in 0.031 seconds.</p>
+<p class="summary">Executed in 0.035 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo"></div>
 <div class="clear"></div>
@@ -463,26 +416,26 @@
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">--Output from testNameIsRequired--
+<pre class="stdout">--Output from testLengthOfName--
 --Output from testNameIsNotBlank--
---Output from testLengthOfName--
+--Output from testNameIsRequired--
 --Output from testDateNotNull--
 --Output from testDateIsInFuture--
---Output from testStartingPriceIsRequired--
---Output from testStartingPriceIsValid--
+--Output from testpriceStartedIsRequired--
+--Output from testpriceStartedIsValid--
 --Output from testSellerIsRequired--
 --Output from testLengthOfDescription--
 </pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
-<pre class="syserr">--Output from testNameIsRequired--
+<pre class="syserr">--Output from testLengthOfName--
 --Output from testNameIsNotBlank--
---Output from testLengthOfName--
+--Output from testNameIsRequired--
 --Output from testDateNotNull--
 --Output from testDateIsInFuture--
---Output from testStartingPriceIsRequired--
---Output from testStartingPriceIsValid--
+--Output from testpriceStartedIsRequired--
+--Output from testpriceStartedIsValid--
 --Output from testSellerIsRequired--
 --Output from testLengthOfDescription--
 </pre>

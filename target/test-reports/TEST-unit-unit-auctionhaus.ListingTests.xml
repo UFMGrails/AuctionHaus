@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.ListingTests" tests="9" time="0.281" timestamp="2012-02-15T22:47:45">
+<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.ListingTests" tests="9" time="0.371" timestamp="2012-02-16T00:40:47">
   <properties />
-  <testcase classname="auctionhaus.ListingTests" name="testNameIsRequired" time="0.032" />
-  <testcase classname="auctionhaus.ListingTests" name="testNameIsNotBlank" time="0.015" />
-  <testcase classname="auctionhaus.ListingTests" name="testLengthOfName" time="0.031" />
-  <testcase classname="auctionhaus.ListingTests" name="testDateNotNull" time="0.031" />
-  <testcase classname="auctionhaus.ListingTests" name="testDateIsInFuture" time="0.015" />
-  <testcase classname="auctionhaus.ListingTests" name="testStartingPriceIsRequired" time="0.016" />
-  <testcase classname="auctionhaus.ListingTests" name="testStartingPriceIsValid" time="0.016" />
-  <testcase classname="auctionhaus.ListingTests" name="testSellerIsRequired" time="0.016" />
-  <testcase classname="auctionhaus.ListingTests" name="testLengthOfDescription" time="0.031" />
-  <system-out><![CDATA[--Output from testNameIsRequired--
+  <testcase classname="auctionhaus.ListingTests" name="testLengthOfName" time="0.041" />
+  <testcase classname="auctionhaus.ListingTests" name="testNameIsNotBlank" time="0.027" />
+  <testcase classname="auctionhaus.ListingTests" name="testNameIsRequired" time="0.037" />
+  <testcase classname="auctionhaus.ListingTests" name="testDateNotNull" time="0.032" />
+  <testcase classname="auctionhaus.ListingTests" name="testDateIsInFuture" time="0.036" />
+  <testcase classname="auctionhaus.ListingTests" name="testpriceStartedIsRequired" time="0.027" />
+  <testcase classname="auctionhaus.ListingTests" name="testpriceStartedIsValid" time="0.026" />
+  <testcase classname="auctionhaus.ListingTests" name="testSellerIsRequired" time="0.025" />
+  <testcase classname="auctionhaus.ListingTests" name="testLengthOfDescription" time="0.035" />
+  <system-out><![CDATA[--Output from testLengthOfName--
 --Output from testNameIsNotBlank--
---Output from testLengthOfName--
+--Output from testNameIsRequired--
 --Output from testDateNotNull--
 --Output from testDateIsInFuture--
---Output from testStartingPriceIsRequired--
---Output from testStartingPriceIsValid--
+--Output from testpriceStartedIsRequired--
+--Output from testpriceStartedIsValid--
 --Output from testSellerIsRequired--
 --Output from testLengthOfDescription--
 ]]></system-out>
-  <system-err><![CDATA[--Output from testNameIsRequired--
+  <system-err><![CDATA[--Output from testLengthOfName--
 --Output from testNameIsNotBlank--
---Output from testLengthOfName--
+--Output from testNameIsRequired--
 --Output from testDateNotNull--
 --Output from testDateIsInFuture--
---Output from testStartingPriceIsRequired--
---Output from testStartingPriceIsValid--
+--Output from testpriceStartedIsRequired--
+--Output from testpriceStartedIsValid--
 --Output from testSellerIsRequired--
 --Output from testLengthOfDescription--
 ]]></system-err>

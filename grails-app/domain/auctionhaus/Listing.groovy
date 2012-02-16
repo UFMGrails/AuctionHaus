@@ -2,8 +2,8 @@ package auctionhaus
 
 class Listing {
     String name
-    Date endDateTime
-    BigDecimal startingPrice
+    Date dateEnded
+    BigDecimal priceStarted
     String description
     Customer seller
     Customer winner
@@ -15,13 +15,13 @@ class Listing {
 
     static constraints = {
         // L1 and L6 name cannot be blank and needs to be less than 64 characters
-        name(nullable:false, blank:false, size: 1..64)
+        name(nullable:false, blank:false, size: 1..63)
         //L4 description can be blank but cannot be more than 256 characters
-        description(nullable:true, blank: true, size:1..256)
+        description(nullable:true, blank: true, size:1..255)
         //L1 and L5 end date cannot be null. It needs to be a date sometime in the future.
-        endDateTime(nullable:false,validator:{it > new Date()}  )
+        dateEnded(nullable:false,validator:{it > new Date()}  )
         //L1 starting Price cannot be null. Probably should not be negative
-        startingPrice(nullable: false, validator: {it > 0.00})
+        priceStarted(nullable: false, validator: {it > 0.00})
         //L3 Listing is required to have a seller.
         seller (nullable: false)
         winner (nullable: true)

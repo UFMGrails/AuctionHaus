@@ -1,2 +1,3 @@
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
 --Output from testBiddingIsSavedWhenListingIsSaved--
+--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
+2.00

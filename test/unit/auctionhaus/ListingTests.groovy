@@ -15,26 +15,26 @@ class ListingTests {
     
     protected void setUp()
     {
-        super.setUp()
+       super.setUp()
     }
     
     void testNameIsRequired()
     {
-       listing = new Listing(endDateTime: new Date() + 5, startingPrice: 40.99, description: 'Cannon Camera', seller: customer )
+       listing = new Listing(dateEnded: new Date() + 5, priceStarted: 40.99, description: 'Cannon Camera', seller: customer )
        listing.validate()
        assert 1 == listing.errors.fieldErrorCount
        assert 'nullable' == listing.errors['name'].code
     }
     void testNameIsNotBlank()
     {
-        listing = new Listing(name: '' ,endDateTime: new Date() + 5, startingPrice: 40.99, description: 'Cannon Camera', seller: customer )
+        listing = new Listing(name: '' ,dateEnded: new Date() + 5, priceStarted: 40.99, description: 'Cannon Camera', seller: customer )
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
         assert 'blank' == listing.errors['name'].code
     }
     void testLengthOfName()
     {
-        listing = new Listing(name: 'sdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasda' ,endDateTime: new Date() + 5, startingPrice: 40.99, description: 'Cannon Camera', seller: customer )
+        listing = new Listing(name: 'sdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasda' ,dateEnded: new Date() + 5, priceStarted: 40.99, description: 'Cannon Camera', seller: customer )
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
         assert 'size.toobig' == listing.errors['name'].code
@@ -42,46 +42,46 @@ class ListingTests {
     
     void testDateNotNull()
     {
-        listing = new Listing(name: 'Cannon' , startingPrice: 40.99, description: 'Cannon Camera', seller: customer )
+        listing = new Listing(name: 'Cannon' , priceStarted: 40.99, description: 'Cannon Camera', seller: customer )
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
-        assert 'nullable' == listing.errors['endDateTime'].code
+        assert 'nullable' == listing.errors['dateEnded'].code
     }
 
     void testDateIsInFuture()
     {
-        listing = new Listing(name: 'Cannon' ,endDateTime: new Date() -2, startingPrice: 40.99, description: 'Cannon Camera', seller: customer )
+        listing = new Listing(name: 'Cannon' ,dateEnded: new Date() -2, priceStarted: 40.99, description: 'Cannon Camera', seller: customer )
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
-        assert 'validator.invalid' == listing.errors['endDateTime'].code
+        assert 'validator.invalid' == listing.errors['dateEnded'].code
     }
 
-    void testStartingPriceIsRequired()
+    void testPriceStartedIsRequired()
     {
-        listing = new Listing(name: 'Cannon' ,endDateTime: new Date() + 2, description: 'Cannon Camera', seller: customer )
+        listing = new Listing(name: 'Cannon' ,dateEnded: new Date() + 2, description: 'Cannon Camera', seller: customer )
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
-        assert 'nullable' == listing.errors['startingPrice'].code
+        assert 'nullable' == listing.errors['priceStarted'].code
     }
 
-    void testStartingPriceIsValid()
+    void testPriceStartedIsValid()
     {
-        listing = new Listing(name: 'Cannon' ,endDateTime: new Date() + 2, startingPrice: -0.99, description: 'Cannon Camera', seller: customer )
+        listing = new Listing(name: 'Cannon' ,dateEnded: new Date() + 2, priceStarted: -0.99, description: 'Cannon Camera', seller: customer )
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
-        assert 'validator.invalid' == listing.errors['startingPrice'].code
+        assert 'validator.invalid' == listing.errors['priceStarted'].code
     }
 
     void testSellerIsRequired()
     {
-        listing = new Listing(name: 'Cannon' ,endDateTime: new Date() + 2, startingPrice: 0.99, description: 'Cannon Camera')
+        listing = new Listing(name: 'Cannon' ,dateEnded: new Date() + 2, priceStarted: 0.99, description: 'Cannon Camera')
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
         assert 'nullable' == listing.errors['seller'].code
     }
     void testLengthOfDescription()
     {
-        listing = new Listing(name: 'Cannon' ,endDateTime: new Date() + 2, startingPrice: 0.99, description: 'qsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdas', seller: customer)
+        listing = new Listing(name: 'Cannon' ,dateEnded: new Date() + 2, priceStarted: 0.99, description: 'qsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdas', seller: customer)
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
         assert 'size.toobig' == listing.errors['description'].code
