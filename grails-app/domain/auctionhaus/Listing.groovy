@@ -1,13 +1,13 @@
 package auctionhaus
 
 class Listing {
-    //This is to test the commit from Ujjwal
     String name
     Date dateEnded
     BigDecimal priceStarted
     String description
     Customer seller
     Customer winner
+    public static final BigDecimal minBidIncrement = 0.5
 
     static hasMany = [biddings: Bidding]
     static belongsTo = [seller: Customer]
@@ -29,22 +29,29 @@ class Listing {
     }
 
     BigDecimal getWinningBidPrice(){
-        def winningBidPrice
-        if (biddings)
+        def output
+        if (biddings != null)
         {
-            winningBidPrice = Bidding.createCriteria().get(){
+            output = Bidding.createCriteria().get(){
             eq ("listing",this)
             projections { max "bidAmount"}
         }
-        }
 
-            if (winningBidPrice)
-            {winningBidPrice}
-            else if (priceStarted){priceStarted}
-        else {0.0}
+
+        if (output)
+        {
+            output
+        }
+        else if (priceStarted)  (priceStarted)
+        else
+        {
+         0.00
+
+        }
     }
 
-}
+
+}     }
 
 
 
