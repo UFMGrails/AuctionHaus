@@ -1,14 +1,13 @@
 Testsuite: auctionhaus.BiddingIntegrationTests
-Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 1.093 sec
-------------- Standard Output ---------------
---Output from testBiddingIsSavedWhenListingIsSaved--
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
-2.00
-------------- ---------------- ---------------
+Tests run: 1, Failures: 0, Errors: 1, Time elapsed: 1.058 sec
 ------------- Standard Error -----------------
 --Output from testBiddingIsSavedWhenListingIsSaved--
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
 ------------- ---------------- ---------------
 
-Testcase: testBiddingIsSavedWhenListingIsSaved took 0.92 sec
-Testcase: testBidAmountIsFiftyCentHigherThanPreviousBid took 0.165 sec
+Testcase: testBiddingIsSavedWhenListingIsSaved took 1.025 sec
+	Caused an ERROR
+null id in auctionhaus.Bidding entry (don't flush the Session after an exception occurs)
+org.hibernate.AssertionFailure: null id in auctionhaus.Bidding entry (don't flush the Session after an exception occurs)
+	at org.grails.datastore.gorm.GormStaticApi$_methodMissing_closure2.doCall(GormStaticApi.groovy:105)
+	at auctionhaus.BiddingIntegrationTests.testBiddingIsSavedWhenListingIsSaved(BiddingIntegrationTests.groovy:42)
+

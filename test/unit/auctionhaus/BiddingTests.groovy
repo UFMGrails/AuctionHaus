@@ -13,6 +13,9 @@ import org.junit.*
 class BiddingTests {
     def today = new Date()
     def futureDate = today+ 100
+    def seller = new Customer(email:"seller@gmail.com", password:"abcdef")
+    def bidder = new Customer(email:"bidder@gmail.com", password:"abcdef")
+    def listing = new Listing(name:"TV",dateEnded: futureDate,priceStarted: 1.50,seller: seller)
 
     protected void setUp()
     {
@@ -31,9 +34,7 @@ class BiddingTests {
 
     void testDateCreatedIsAssigned()
     {
-        def seller = new Customer(email:"seller@gmail.com", password:"abcdef")
-        def bidder = new Customer(email:"bidder@gmail.com", password:"abcdef")
-        def listing = new Listing(name:"TV",dateEnded: futureDate,priceStarted: 1.50,seller: seller)
+        //B-1: Bids have the following required fields: amount and date/time of bid (unit test)
         def bidding = new Bidding(bidAmount:2.50,listing:listing,bidder: bidder)
         bidding.validate()
         assert 0 == bidding.errors.fieldErrorCount
@@ -42,10 +43,6 @@ class BiddingTests {
     void testBidsAreRequiredToHaveABidder()
     {
         //B-3: Bids are required to have a bidder (Customer) (unit test)
-        def seller = new Customer(email:"seller@gmail.com", password:"abcdef")
-        def bidder = new Customer(email:"bidder@gmail.com", password:"abcdef")
-        def listing = new Listing(name:"TV",dateEnded: futureDate,priceStarted: 1.50,seller: seller)
-
         def bidding = new Bidding(bidAmount:2.50,listing:listing)
         bidding.validate()
         assert "nullable" == bidding.errors["bidder"].code
@@ -55,10 +52,6 @@ class BiddingTests {
     void testBidsAreRequiredToBeForListing()
     {
         //B-2: Bids are required to be for a Listing (unit test)
-        def seller = new Customer(email:"seller@gmail.com", password:"abcdef")
-        def bidder = new Customer(email:"bidder@gmail.com", password:"abcdef")
-        def listing = new Listing(name:"TV",dateEnded: futureDate,priceStarted: 1.50,seller: seller)
-
         def bidding = new Bidding(bidAmount:2.50, bidder: bidder)
         bidding.validate()
         assert "nullable" == bidding.errors["listing"].code
@@ -67,12 +60,8 @@ class BiddingTests {
 
     void testListingHasListOfBids()
     {
-        //B-3: Bids are required to have a bidder (Customer) (unit test)
+        //B-4: A Listing has a list of Bids for that Listing (unit test)
        mockDomain(Listing)
-        def seller = new Customer(email:"seller@gmail.com", password:"abcdef")
-        def bidder = new Customer(email:"bidder@gmail.com", password:"abcdef")
-        def listing = new Listing(name:"TV",dateEnded: futureDate,priceStarted: 1.50,seller: seller)
-
         listing.addToBiddings( new Bidding(bidAmount:2.00,bidder: bidder, listing:listing))
         listing.addToBiddings( new Bidding(bidAmount:2.50,bidder: bidder, listing:listing))
         listing.addToBiddings( new Bidding(bidAmount:3.50,bidder: bidder, listing:listing))

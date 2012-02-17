@@ -1,139 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="user-HP" id="0" name="BiddingIntegrationTests" package="auctionhaus" tests="2" time="1.093" timestamp="2012-02-16T00:41:05">
+  <testsuite errors="1" failures="0" hostname="ujjwal-PC" id="0" name="BiddingIntegrationTests" package="auctionhaus" tests="1" time="1.058" timestamp="2012-02-17T00:52:42">
       <properties />
 
-      <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBiddingIsSavedWhenListingIsSaved" time="0.92" />
+      <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBiddingIsSavedWhenListingIsSaved" time="1.028">
+          <error message="null id in auctionhaus.Bidding entry (don&apos;t flush the Session after an exception occurs)" type="org.hibernate.AssertionFailure">org.hibernate.AssertionFailure: null id in auctionhaus.Bidding entry (don&apos;t flush the Session after an exception occurs)
+	at org.grails.datastore.gorm.GormStaticApi$_methodMissing_closure2.doCall(GormStaticApi.groovy:105)
+	at auctionhaus.BiddingIntegrationTests.testBiddingIsSavedWhenListingIsSaved(BiddingIntegrationTests.groovy:42)
+</error>
 
-      <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBidAmountIsFiftyCentHigherThanPreviousBid" time="0.165" />
+      </testcase>
 
-      <system-out><![CDATA[--Output from testBiddingIsSavedWhenListingIsSaved--
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
-2.00
-]]></system-out>
+      <system-out><![CDATA[]]></system-out>
 
       <system-err><![CDATA[--Output from testBiddingIsSavedWhenListingIsSaved--
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
-]]></system-err>
-
-  </testsuite>
-  <testsuite errors="0" failures="0" hostname="user-HP" id="1" name="CustomerIntegrationTests" package="auctionhaus" tests="1" time="0.047" timestamp="2012-02-16T00:41:06">
-      <properties />
-
-      <testcase classname="auctionhaus.CustomerIntegrationTests" name="testEmailIsUnique" time="0.045" />
-
-      <system-out><![CDATA[--Output from testEmailIsUnique--
-]]></system-out>
-
-      <system-err><![CDATA[--Output from testEmailIsUnique--
-]]></system-err>
-
-  </testsuite>
-  <testsuite errors="0" failures="0" hostname="user-HP" id="2" name="BiddingTests" package="auctionhaus" tests="5" time="2.709" timestamp="2012-02-16T00:40:44">
-      <properties />
-
-      <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToBeForListing" time="1.27" />
-
-      <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToHaveABidder" time="0.047" />
-
-      <testcase classname="auctionhaus.BiddingTests" name="testDateCreatedIsAssigned" time="0.053" />
-
-      <testcase classname="auctionhaus.BiddingTests" name="testAmountIsRequired" time="0.043" />
-
-      <testcase classname="auctionhaus.BiddingTests" name="testListingHasListOfBids" time="1.188" />
-
-      <system-out><![CDATA[--Output from testBidsAreRequiredToBeForListing--
---Output from testBidsAreRequiredToHaveABidder--
---Output from testDateCreatedIsAssigned--
---Output from testAmountIsRequired--
---Output from testListingHasListOfBids--
-]]></system-out>
-
-      <system-err><![CDATA[--Output from testBidsAreRequiredToBeForListing--
---Output from testBidsAreRequiredToHaveABidder--
---Output from testDateCreatedIsAssigned--
---Output from testAmountIsRequired--
---Output from testListingHasListOfBids--
-]]></system-err>
-
-  </testsuite>
-  <testsuite errors="0" failures="0" hostname="user-HP" id="3" name="CustomerTests" package="auctionhaus" tests="7" time="0.463" timestamp="2012-02-16T00:40:47">
-      <properties />
-
-      <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsBetweenRightSize" time="0.179" />
-
-      <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsAboveMin" time="0.037" />
-
-      <testcase classname="auctionhaus.CustomerTests" name="testEmailIsValid" time="0.054" />
-
-      <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsBelowMax" time="0.028" />
-
-      <testcase classname="auctionhaus.CustomerTests" name="testDateCreatedIsRequired" time="0.025" />
-
-      <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsRequired" time="0.036" />
-
-      <testcase classname="auctionhaus.CustomerTests" name="testEmailIsRequired" time="0.025" />
-
-      <system-out><![CDATA[--Output from testPasswordIsBetweenRightSize--
---Output from testPasswordIsAboveMin--
---Output from testEmailIsValid--
---Output from testPasswordIsBelowMax--
---Output from testDateCreatedIsRequired--
---Output from testPasswordIsRequired--
---Output from testEmailIsRequired--
-]]></system-out>
-
-      <system-err><![CDATA[--Output from testPasswordIsBetweenRightSize--
---Output from testPasswordIsAboveMin--
---Output from testEmailIsValid--
---Output from testPasswordIsBelowMax--
---Output from testDateCreatedIsRequired--
---Output from testPasswordIsRequired--
---Output from testEmailIsRequired--
-]]></system-err>
-
-  </testsuite>
-  <testsuite errors="0" failures="0" hostname="user-HP" id="4" name="ListingTests" package="auctionhaus" tests="9" time="0.371" timestamp="2012-02-16T00:40:47">
-      <properties />
-
-      <testcase classname="auctionhaus.ListingTests" name="testLengthOfName" time="0.041" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testNameIsNotBlank" time="0.027" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testNameIsRequired" time="0.037" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testDateNotNull" time="0.032" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testDateIsInFuture" time="0.036" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testpriceStartedIsRequired" time="0.027" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testpriceStartedIsValid" time="0.026" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testSellerIsRequired" time="0.025" />
-
-      <testcase classname="auctionhaus.ListingTests" name="testLengthOfDescription" time="0.035" />
-
-      <system-out><![CDATA[--Output from testLengthOfName--
---Output from testNameIsNotBlank--
---Output from testNameIsRequired--
---Output from testDateNotNull--
---Output from testDateIsInFuture--
---Output from testpriceStartedIsRequired--
---Output from testpriceStartedIsValid--
---Output from testSellerIsRequired--
---Output from testLengthOfDescription--
-]]></system-out>
-
-      <system-err><![CDATA[--Output from testLengthOfName--
---Output from testNameIsNotBlank--
---Output from testNameIsRequired--
---Output from testDateNotNull--
---Output from testDateIsInFuture--
---Output from testpriceStartedIsRequired--
---Output from testpriceStartedIsValid--
---Output from testSellerIsRequired--
---Output from testLengthOfDescription--
 ]]></system-err>
 
   </testsuite>

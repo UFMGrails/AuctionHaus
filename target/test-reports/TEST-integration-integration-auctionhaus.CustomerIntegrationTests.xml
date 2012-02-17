@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.CustomerIntegrationTests" tests="1" time="0.047" timestamp="2012-02-16T00:41:06">
-  <properties />
-  <testcase classname="auctionhaus.CustomerIntegrationTests" name="testEmailIsUnique" time="0.045" />
-  <system-out><![CDATA[--Output from testEmailIsUnique--
-]]></system-out>
-  <system-err><![CDATA[--Output from testEmailIsUnique--
-]]></system-err>
-</testsuite>

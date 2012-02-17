@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.BiddingIntegrationTests" tests="2" time="1.093" timestamp="2012-02-16T00:41:05">
+<testsuite errors="1" failures="0" hostname="ujjwal-PC" name="auctionhaus.BiddingIntegrationTests" tests="1" time="1.058" timestamp="2012-02-17T00:52:42">
   <properties />
-  <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBiddingIsSavedWhenListingIsSaved" time="0.92" />
-  <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBidAmountIsFiftyCentHigherThanPreviousBid" time="0.165" />
-  <system-out><![CDATA[--Output from testBiddingIsSavedWhenListingIsSaved--
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
-2.00
-]]></system-out>
+  <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBiddingIsSavedWhenListingIsSaved" time="1.028">
+    <error message="null id in auctionhaus.Bidding entry (don&apos;t flush the Session after an exception occurs)" type="org.hibernate.AssertionFailure">org.hibernate.AssertionFailure: null id in auctionhaus.Bidding entry (don&apos;t flush the Session after an exception occurs)
+	at org.grails.datastore.gorm.GormStaticApi$_methodMissing_closure2.doCall(GormStaticApi.groovy:105)
+	at auctionhaus.BiddingIntegrationTests.testBiddingIsSavedWhenListingIsSaved(BiddingIntegrationTests.groovy:42)
+</error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[--Output from testBiddingIsSavedWhenListingIsSaved--
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
 ]]></system-err>
 </testsuite>

@@ -79,7 +79,7 @@ class CustomerTests {
 
     void testEmailIsValid()
     {
-        //C-4: Password must be between 6-8 characters
+        //C-3: Email address must be of a valid form (@.*) (unit test)
         customer = new Customer(email:"abc", password:"abcdef")
         customer.validate()
         assert 1 == customer.errors.fieldErrorCount
