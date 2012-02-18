@@ -87,7 +87,7 @@ class ListingTests {
         assert 1 == listing.errors.fieldErrorCount
         assert 'nullable' == listing.errors['seller'].code
     }
-
+                                    //howa
     void testLengthOfDescriptionTooLong() {
         listing = new Listing(name: 'Cannon', dateEnded: new Date() + 2, priceStarted: 0.99, description: 'qsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdas', seller: customer)
         listing.validate()

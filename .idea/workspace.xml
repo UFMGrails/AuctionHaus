@@ -67,7 +67,7 @@
       <file leaf-file-name="ListingTests.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/unit/auctionhaus/ListingTests.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="19" selection-start="3586" selection-end="3586" vertical-scroll-proportion="0.8306189">
+            <state line="88" column="67" selection-start="3565" selection-end="3565" vertical-scroll-proportion="0.71986973">
               <folding />
             </state>
           </provider>
@@ -732,7 +732,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/auctionhaus/ListingTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="19" selection-start="3586" selection-end="3586" vertical-scroll-proportion="0.8306189">
+        <state line="88" column="67" selection-start="3565" selection-end="3565" vertical-scroll-proportion="0.71986973">
           <folding />
         </state>
       </provider>
