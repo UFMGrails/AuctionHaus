@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="CFOIT200756262" id="0" name="BiddingIntegrationTests" package="auctionhaus" tests="2" time="1.372" timestamp="2012-02-17T18:22:33">
+  <testsuite errors="0" failures="0" hostname="user-HP" id="0" name="ListingTests" package="auctionhaus" tests="1" time="1.069" timestamp="2012-02-18T20:05:19">
       <properties />
 
-      <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBidAmountIsFiftyCentHigherThanPreviousBid" time="0.995" />
-
-      <testcase classname="auctionhaus.BiddingIntegrationTests" name="testBiddingIsSavedWhenListingIsSaved" time="0.342" />
+      <testcase classname="auctionhaus.ListingTests" name="testLengthOfDescriptionTooLong" time="1.025" />
 
       <system-out><![CDATA[]]></system-out>
 
-      <system-err><![CDATA[--Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
---Output from testBiddingIsSavedWhenListingIsSaved--
+      <system-err><![CDATA[--Output from testLengthOfDescriptionTooLong--
 ]]></system-err>
 
   </testsuite>

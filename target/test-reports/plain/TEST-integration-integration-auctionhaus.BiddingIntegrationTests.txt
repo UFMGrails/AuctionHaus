@@ -1,9 +1,0 @@
-Testsuite: auctionhaus.BiddingIntegrationTests
-Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 1.372 sec
-------------- Standard Error -----------------
---Output from testBidAmountIsFiftyCentHigherThanPreviousBid--
---Output from testBiddingIsSavedWhenListingIsSaved--
-------------- ---------------- ---------------
-
-Testcase: testBidAmountIsFiftyCentHigherThanPreviousBid took 0.995 sec
-Testcase: testBiddingIsSavedWhenListingIsSaved took 0.342 sec

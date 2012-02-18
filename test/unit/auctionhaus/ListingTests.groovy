@@ -31,12 +31,27 @@ class ListingTests {
         assert 'blank' == listing.errors['name'].code
     }
 
-    void testLengthOfName() {
-        listing = new Listing(name: 'sdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasda', dateEnded: new Date() + 5, priceStarted: 40.99, description: 'Cannon Camera', seller: customer)
+    void testLengthOfNameTooLong() {
+        listing = new Listing(name: 'sdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasb', dateEnded: new Date() + 5, priceStarted: 40.99, description: 'Cannon Camera', seller: customer)
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
         assert 'size.toobig' == listing.errors['name'].code
     }
+
+    void testLengthOfNameOK() {
+        listing = new Listing(name: 'sdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasda', dateEnded: new Date() + 5, priceStarted: 40.99, description: 'Cannon Camera', seller: customer)
+        listing.validate()
+        assert 0 == listing.errors.fieldErrorCount
+        listing.name = 'asdadasdas'
+        listing.validate()
+        assert 0 == listing.errors.fieldErrorCount
+        listing.name = 'a'
+        listing.validate()
+        assert 0 == listing.errors.fieldErrorCount
+
+    }
+    
+    
 
     void testDateNotNull() {
         listing = new Listing(name: 'Cannon', priceStarted: 40.99, description: 'Cannon Camera', seller: customer)
@@ -73,11 +88,27 @@ class ListingTests {
         assert 'nullable' == listing.errors['seller'].code
     }
 
-    void testLengthOfDescription() {
+    void testLengthOfDescriptionTooLong() {
         listing = new Listing(name: 'Cannon', dateEnded: new Date() + 2, priceStarted: 0.99, description: 'qsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdas', seller: customer)
         listing.validate()
         assert 1 == listing.errors.fieldErrorCount
         assert 'size.toobig' == listing.errors['description'].code
+        listing.description = 'qsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasasdasdasdasdasdasdasdasdadasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadsdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdadasdasdasdasooi'
+        assert 1 == listing.errors.fieldErrorCount
+        assert 'size.toobig' == listing.errors['description'].code
+    }
+
+    void testLengthOfDescriptionOK() {
+        listing = new Listing(name: 'Cannon', dateEnded: new Date() + 2, priceStarted: 0.99, description: '', seller: customer)
+        listing.validate()
+        assert 0 == listing.errors.fieldErrorCount
+        listing.description = 'qsdasdasdasdasdasdasdasdasdasdasdasd'
+        assert 0 == listing.errors.fieldErrorCount
+        listing.description = 'd'
+        assert 0 == listing.errors.fieldErrorCount
+        listing.description = ''
+        assert 0 == listing.errors.fieldErrorCount
+
     }
 
 }
