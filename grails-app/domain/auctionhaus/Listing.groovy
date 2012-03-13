@@ -7,12 +7,18 @@ class Listing {
     String description
     Customer seller
     Customer winner
+    Date dateCreated
     public static final BigDecimal minBidIncrement = 0.5
 
     static hasMany = [biddings: Bidding]
     static belongsTo = [seller: Customer]
 
     static transients = ['winningBidPrice']
+
+    String toString(){
+        return name
+    }
+
 
     static constraints = {
         // L1 and L6 name cannot be blank and needs to be less than 64 characters
@@ -22,6 +28,7 @@ class Listing {
         //L1 and L5 end date cannot be null. It needs to be a date sometime in the future.
         dateEnded(nullable:false,validator:{it > new Date()}  )
         //L1 starting Price cannot be null. Probably should not be negative
+        dateCreated()
         priceStarted(nullable: false, validator: {it > 0.00})
         //L3 Listing is required to have a seller.
         seller (nullable: false)
@@ -50,8 +57,10 @@ class Listing {
         }
     }
 
+}
 
-}     }
+
+}
 
 
 

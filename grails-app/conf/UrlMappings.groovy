@@ -7,7 +7,8 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+        //M-1: The main landing page shows listings sorted by the date they were created (most recent first)
+		"/"(controller:'Listing',action: "/index")
 		"500"(view:'/error')
 	}
 }

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.ListingTests" tests="1" time="1.069" timestamp="2012-02-18T20:05:19">
-  <properties />
-  <testcase classname="auctionhaus.ListingTests" name="testLengthOfDescriptionTooLong" time="1.025" />
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[--Output from testLengthOfDescriptionTooLong--
-]]></system-err>
-</testsuite>

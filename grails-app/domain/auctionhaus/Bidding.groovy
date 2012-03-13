@@ -9,6 +9,10 @@ class Bidding {
     //B-3: Bids are required to have a bidder (Customer) (unit test)
     static belongsTo = [bidder: Customer, listing: Listing]
 
+    String toString(){
+        return bidder.email
+    }
+
     static mapping = {
         listing cascade: 'refresh'
     }
@@ -39,7 +43,7 @@ class Bidding {
         //B-5: The Bid amount must be at least .50 higher than the previous Bid for the same listing (integration test)
         //The custom validator needs to make sure it's only validating the last bid that was added.
         bidAmount(validator:
-                {val, obj ->
+                {val, obj,errors ->
                     if (obj.listing) {
                         if (obj.listing.biddings && obj.id == null) {
                             val >= (obj.listing.winningBidPrice + 0.5)
@@ -48,6 +52,7 @@ class Bidding {
                             val >= (obj.listing.priceStarted + 0.5)
                         }
                     }
+
                 }
         )
 

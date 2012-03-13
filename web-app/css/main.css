@@ -47,6 +47,24 @@ body {
 	background-color: #abbf78;
 }
 
+#header {
+    background: #7A0019;
+    padding: 2em 1em 2em 1em;
+    margin-bottom: 1em;
+}
+
+a.header-main:link, a.header-main:visited {
+    color: #FFD453;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.header-sub {
+    color: #FFD453;
+    font-size: 1.25em;
+    font-style: italic;
+}
+
 /* replace with .no-boxshadow body if you have modernizr available */
 .ie6 body,
 .ie7 body,
@@ -104,8 +122,8 @@ img {
 }
 
 .footer {
-	background: #abbf78;
-	color: #000;
+	background: #7A0019;
+	color: #7A0019;
 	clear: both;
 	font-size: 0.8em;
 	margin-top: 1.5em;
@@ -114,7 +132,7 @@ img {
 }
 
 .footer a {
-	color: #255b17;
+	color: #7A0019;
 }
 
 .spinner {

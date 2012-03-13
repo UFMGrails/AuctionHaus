@@ -1,6 +1,45 @@
+import auctionhaus.Customer
+import auctionhaus.Listing
+import auctionhaus.Bidding
+
 class BootStrap {
 
     def init = { servletContext ->
+        def today = new Date()
+        def futureDate = today + 100
+        def seller = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef")).save(flush: true))
+        def seller1 = ((new Customer(email: "sabin8@gmail.com", password: "abcdef")).save(flush: true))
+        def bidder = ((new Customer(email: "kancharam@gmail.com", password: "abcdef")).save(flush: true))
+        def bidder1 = ((new Customer(email: "gorkhali@gmail.com", password: "abcdef")).save(flush: true))
+        def bidder2 = ((new Customer(email: "rajeshhamal@gmail.com", password: "abcdef")).save(flush: true))
+        ((new Customer(email: "armpit@bradpitt.net", password: "abcdef")).save(flush: true))
+
+        def listing = (new Listing(name: "TV", description:"It's TV", dateEnded: futureDate, priceStarted: 500, seller: seller)).save(flush: true)
+        def listing1 = (new Listing(name: "PS3",description:"New", dateEnded: futureDate, priceStarted: 299, seller: seller)).save(flush: true)
+        (new Listing(name: "Laptop", description:"Brand New", dateEnded: futureDate, priceStarted: 500, seller: seller1)).save(flush: true)
+        (new Listing(name: "MW3", description:"No Scratch. Perfect Condition",dateEnded: futureDate, priceStarted: 50, seller: seller1)).save(flush: true)
+        (new Listing(name: "MGS3", description:"No Scratch. Perfect Condition", dateEnded: futureDate, priceStarted: 50, dateCreated: today-5, seller: seller1)).save(flush: true)
+        def listing3 = (new Listing(name: "Penny", dateEnded: futureDate, priceStarted: 50, dateCreated: today-9, seller: seller1)).save(flush: true)
+        (new Listing(name: "GroovyonGrails", description:"Very Used. Lot learned. Must have",dateEnded: futureDate+50, priceStarted: 1000, seller: bidder1)).save(flush: true)
+        (new Listing(name: "HDMI Cable", dateEnded: futureDate, priceStarted: 5, seller: bidder)).save(flush: true)
+        (new Listing(name: "Two and Half Men DVD",description:"No Charlie Sheen", dateEnded: futureDate+2, priceStarted: 45, seller: bidder2)).save(flush: true)
+        (new Listing(name: "Big Band Theory Season 1", dateEnded: futureDate, priceStarted: 50, seller: seller1)).save(flush: true)
+
+
+        listing.addToBiddings(new Bidding(bidAmount: 600, bidder: bidder)).save(flush: true)
+        listing.addToBiddings(new Bidding(bidAmount: 700, bidder: bidder1)).save(flush: true)
+        listing.addToBiddings(new Bidding(bidAmount: 800, bidder: bidder1)).save(flush: true)
+
+        listing1.addToBiddings(new Bidding(bidAmount: 300, bidder: bidder)).save(flush: true)
+        listing1.addToBiddings(new Bidding(bidAmount: 350, bidder: bidder1)).save(flush: true)
+
+        listing3.addToBiddings(new Bidding(bidAmount: 55, bidder: bidder2)).save(flush: true)
+        listing3.addToBiddings(new Bidding(bidAmount: 60, bidder: bidder1)).save(flush: true)
+        listing3.addToBiddings(new Bidding(bidAmount: 62, bidder: bidder2)).save(flush: true)
+        listing3.addToBiddings(new Bidding(bidAmount: 62.8, bidder: bidder1)).save(flush: true)
+        listing3.addToBiddings(new Bidding(bidAmount: 72.8, bidder: bidder1)).save(flush: true)
+
+
     }
     def destroy = {
     }
