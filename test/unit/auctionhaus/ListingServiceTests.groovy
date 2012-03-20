@@ -11,7 +11,7 @@ import org.junit.*
 @TestFor(ListingService)
 class ListingServiceTests {
 
-    void testSomething() {
+    void testaddBidToListing() {
         fail "Implement me"
     }
 }

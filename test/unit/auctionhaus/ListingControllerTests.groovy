@@ -25,6 +25,8 @@ class ListingControllerTests {
         assert "/listing/list" == response.redirectedUrl
     }
 
+    //L-7: The detail page for the listing allows a new bid to be placed (unit test of the controller
+    // action that handles this requirement)
     void testAddBids()
     {
         def today = new Date()
@@ -37,12 +39,14 @@ class ListingControllerTests {
         def bidder = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef"))).save(flush:true)
         assert 0 == bidder.errors.errorCount
 
+        controller.listingService = new ListingService()
 
         params['listing.id'] = listing.id
         params.bidAmount = 50
        controller.addBids()
         assert 1 == listing.biddings.size()
-        assert response.redirectedUrl == '/listing/show/1?max=5'
+        assert response.redirectedUrl == '/listing/show/1'
+        assert controller.flash.message == "default.successful.bid.submitted"
 
         response.reset()
 
@@ -50,6 +54,50 @@ class ListingControllerTests {
         params.bidAmount = 60
         controller.addBids()
         assert 2 == listing.biddings.size()
+        assert controller.flash.message == "default.successful.bid.submitted"
+
+    }
+    //L-8: Validation errors will be displayed on the listing detail page if an added bid does not pass
+    // validation (unit test of the controller action that handles this requirement)
+    void testInvalidAddBids()
+    {
+
+        def today = new Date()
+        def futureDate = today + 100
+
+        def seller = ((new Customer(email: "ujjwal76@gmail.com", password: "abcdef"))).save(flush:true)
+        assert 0 == seller.errors.errorCount
+        def listing = (new Listing(name: "Coke", description:"It's coke", dateEnded: futureDate, priceStarted: 10, seller: seller)).save(flush: true)
+        assert listing.errors.errorCount == 0
+        def bidder = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef"))).save(flush:true)
+        assert 0 == bidder.errors.errorCount
+
+        controller.listingService = new ListingService()
+
+       params['listing.id'] = listing.id
+        params.bidAmount = 60
+        controller.addBids()
+        assert 1 == listing.biddings.size()
+        assert controller.flash.message == "default.successful.bid.submitted"
+
+        response.reset()
+
+        params['listing.id'] = listing.id
+        params.bidAmount = 55
+        controller.addBids()
+        assert 1 == listing.biddings.size()
+        assert flash.message != null
+        print controller.flash.message
+        assert controller.flash.message == "default.unsuccessful.bid.submitted"
+
+        response.reset()
+
+        params['listing.id'] = listing.id
+        params.bidAmount = 50
+        controller.addBids()
+        assert 1 == listing.biddings.size()
+        assert flash.message != null
+        assert controller.flash.message == "default.unsuccessful.bid.submitted"
 
     }
 

@@ -94,7 +94,9 @@ class CustomerController {
             //C-4: An existing customer can only be deleted through the web interface if they have 0 listings and 0 bids.
             // The system will present an error message to the user if the delete cannot be performed (unit test of the
             // controller action that has this logic)
-            if (customerInstance?.biddings?.size() == null && customerInstance?.listings?.size() == null)
+            if (((customerInstance.biddings == null)||
+                    (customerInstance.biddings.size() == 0)) && ((customerInstance.listings.size() == 0)
+            ||customerInstance.listings == null))
             {
             customerInstance.delete(flush: true)
 			flash.message = message(code: 'default.deleted.message', args: [message(code: 'customer.label', default: 'Customer'), params.id])

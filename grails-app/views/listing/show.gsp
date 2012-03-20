@@ -23,14 +23,7 @@
 			</g:if>
 			<ol class="property-list listing">
 
-                <!--L-1: The detail page for the listing shows the name of the listing
-                    L-2: The detail page for the listing shows the starting bid price of the listing
-                    L-3: The detail page for the listing shows the most recent bid
-                    L-4: The detail page for the listing shows the end date/time of the listing
-                    L-5: The detail page for the listing optionally shows the description
-                    L-6: The detail page for the listing shows only the user portion of the email address
-                    of the user who created the listing (e.g. “mike” if the email address is “mike@piragua.com”)-->
-			
+                <!--L-1: The detail page for the listing shows the name of the listing-->
 				<g:if test="${listingInstance?.name}">
 				<li class="fieldcontain">
 					<span id="name-label" class="property-label"><g:message code="listing.name.label" default="Name" /></span>
@@ -40,6 +33,7 @@
 				</li>
 				</g:if>
 
+                <!--L-2: The detail page for the listing shows the starting bid price of the listing-->
                 <g:if test="${listingInstance?.priceStarted}">
                     <li class="fieldcontain">
                         <span id="priceStarted-label" class="property-label"><g:message code="listing.priceStarted.label" default="Price Started" /></span>
@@ -49,6 +43,7 @@
                     </li>
                 </g:if>
 
+            <!--L-3: The detail page for the listing shows the most recent bid -->
                 <g:if test="${listingInstance?.biddings}">
                     <li class="fieldcontain">
                         <span id="biddings-label" class="property-label"><g:message code="listing.biddings.label" default="Most Recent Bid" /></span>
@@ -59,6 +54,7 @@
                     </li>
                 </g:if>
 
+            <!--L-4: The detail page for the listing shows the end date/time of the listing -->
                 <g:if test="${listingInstance?.dateEnded}">
                     <li class="fieldcontain">
                         <span id="dateEnded-label" class="property-label"><g:message code="listing.dateEnded.label" default="Date Ended" /></span>
@@ -67,7 +63,8 @@
 
                     </li>
                 </g:if>
-			
+
+            <!--L-5: The detail page for the listing optionally shows the description -->
 				<g:if test="${listingInstance?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="listing.description.label" default="Description" /></span>
@@ -77,6 +74,8 @@
 				</li>
 				</g:if>
 
+            <!--L-6: The detail page for the listing shows only the user portion of the email address
+             of the user who created the listing (e.g. “mike” if the email address is “mike@piragua.com”)-->
                 <g:if test="${listingInstance?.seller}">
                     <li class="fieldcontain">
                         <span id="seller-label" class="property-label"><g:message code="listing.seller.label" default="Seller" /></span>
@@ -85,6 +84,7 @@
 
                     </li>
                 </g:if>
+                <!--L-7: The detail page for the listing allows a new bid to be placed (unit test of the controller action that handles this requirement)-->
                 <g:render template="addBids"/>
             </ol>
 			<g:form>

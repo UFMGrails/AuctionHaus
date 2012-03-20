@@ -13,6 +13,8 @@ class ListingController {
 
     def list() {
 
+
+
         //M-2: The main landing page shows up to 5 listings at a time
         params.max = Math.min(params.max ? params.int('max') : 5, 100)
 
@@ -21,35 +23,36 @@ class ListingController {
         params.sort = (params.sort?params.sort:"dateCreated")
         params.order = (params.order?params.order:"desc")
 
+        // M-4: Only listings with a end date/time that is in the future are visible on the main page
+        def listingInstance = Listing.list(params).findAll {it -> it.dateEnded >= new Date()}
 
-        [listingInstanceList: Listing.list(params), listingInstanceTotal: Listing.count()]
+
+        [listingInstanceList: listingInstance, listingInstanceTotal: Listing.count()]
     }
 
 
-
+    //L-7: The detail page for the listing allows a new bid to be placed
+    // (unit test of the controller action that handles this requirement)
+    //L-8: Validation errors will be displayed on the listing detail page if an added bid does not pass
+    // validation (unit test of the controller action that handles this requirement)
     def addBids = {
 
         def customerInstance = Customer.findByEmail("ujjwal77@gmail.com")
-        def bidInstance = new Bidding(params)
-        bidInstance.bidder = customerInstance
-
-
+        def biddingInstance = new Bidding(params)
+        biddingInstance.bidder = customerInstance
 
             //def listingInstance = Listing.findById(params['listing.id'])
-            listingService.addBidToListing(bidInstance)
-            //listingInstance.addToBiddings(bidInstance).save(flush:true)
-            if (!bidInstance.hasErrors())
-            {
-            flash.message = message(code: 'default.success.bid.submitted', args: [message(code: 'listing.label', default: 'Listing'), params.id])
-            }
-            else
-            {
-                flash.message = "Bid Add Fail due to following reason:"
-            }
+        try{
+            listingService.addBidToListing(biddingInstance)
+            flash.message = message(code: 'default.successful.bid.submitted', args: [message(code: 'listing.label', default: 'Listing'), params.id])
 
+        }
+        catch(Exception ex)
+        {
+            flash.message =  message(code: 'default.unsuccessful.bid.submitted', args: [message(code: 'listing.label', default: 'Listing'), params.id])
 
+        }
         redirect(action: 'show', id: params['listing.id'])
-
     }
 
 

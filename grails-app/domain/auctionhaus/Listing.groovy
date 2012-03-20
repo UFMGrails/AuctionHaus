@@ -44,16 +44,13 @@ class Listing {
             projections { max "bidAmount"}
         }
 
-
         if (output)
         {
-            output
+           return output
         }
-        else if (priceStarted)  (priceStarted)
         else
         {
-         0.00
-
+            return priceStarted
         }
     }
 

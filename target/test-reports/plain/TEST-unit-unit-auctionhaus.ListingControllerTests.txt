@@ -1,7 +1,7 @@
 Testsuite: auctionhaus.ListingControllerTests
-Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 7.446 sec
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 6.634 sec
 ------------- Standard Error -----------------
 --Output from testAddBids--
 ------------- ---------------- ---------------
 
-Testcase: testAddBids took 7.389 sec
+Testcase: testAddBids took 6.58 sec

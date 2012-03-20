@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="ujjwal-PC" name="auctionhaus.ListingControllerTests" tests="1" time="7.446" timestamp="2012-03-09T05:00:50">
+<testsuite errors="0" failures="0" hostname="ujjwal-PC" name="auctionhaus.ListingControllerTests" tests="1" time="6.634" timestamp="2012-03-20T01:16:59">
   <properties />
-  <testcase classname="auctionhaus.ListingControllerTests" name="testAddBids" time="7.389" />
+  <testcase classname="auctionhaus.ListingControllerTests" name="testAddBids" time="6.58" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[--Output from testAddBids--
 ]]></system-err>

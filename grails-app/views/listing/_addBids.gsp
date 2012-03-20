@@ -16,17 +16,17 @@
                 <tbody>
                 <tr class="prop">
                     <td valign="top" class="name">
-                        <label for="bidAmount"><g:message code="bidding.bidAmount" default="Amount"/>:</label>
-                    </td>
-                    <td valign="top" class="value ${hasErrors(bean: biddingInstance, field: 'bidAmount', 'errors')}">
+                        <label for="bidAmount"><g:message code="bidding.bidAmount" default="Enter your bid amount: "/>:</label>
                         <g:textField name="bidAmount" value="${fieldValue(bean:biddingInstance, field: 'bidAmount')}"/>
+                       <g:submitButton name="bid" class="save"  value="${message(code: 'bidding', default: 'Bid')}" />
+
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
-        <g:submitButton name="bid" class="save"  value="${message(code: 'bid', default: 'Bid')}" />
+
 
     </g:form>
 </div>
