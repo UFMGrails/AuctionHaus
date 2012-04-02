@@ -7,12 +7,14 @@ class BootStrap {
     def init = { servletContext ->
         def today = new Date()
         def futureDate = today + 100
-        def seller = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef")).save(flush: true))
-        def seller1 = ((new Customer(email: "sabin8@gmail.com", password: "abcdef")).save(flush: true))
+        def seller = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef",role: "author")).save(flush: true))
+        def seller1 = ((new Customer(email: "sabin8@gmail.com", password: "abcdef",role: "author")).save(flush: true))
         def bidder = ((new Customer(email: "kancharam@gmail.com", password: "abcdef")).save(flush: true))
         def bidder1 = ((new Customer(email: "gorkhali@gmail.com", password: "abcdef")).save(flush: true))
         def bidder2 = ((new Customer(email: "rajeshhamal@gmail.com", password: "abcdef")).save(flush: true))
         ((new Customer(email: "armpit@bradpitt.net", password: "abcdef")).save(flush: true))
+        ((new Customer(email: "admin@gmail.com", password: "admin1",role: "admin")).save(flush: true))
+
 
         def listing = (new Listing(name: "TV", description:"It's TV", dateEnded: futureDate, priceStarted: 500, seller: seller)).save(flush: true)
         def listing1 = (new Listing(name: "PS3",description:"New", dateEnded: futureDate, priceStarted: 299, seller: seller)).save(flush: true)
@@ -24,6 +26,9 @@ class BootStrap {
         (new Listing(name: "HDMI Cable", dateEnded: futureDate, priceStarted: 5, seller: bidder)).save(flush: true)
         (new Listing(name: "Two and Half Men DVD",description:"No Charlie Sheen", dateEnded: futureDate+2, priceStarted: 45, seller: bidder2)).save(flush: true)
         (new Listing(name: "Big Band Theory Season 1", dateEnded: futureDate, priceStarted: 50, seller: seller1)).save(flush: true)
+        (new Listing(name: "Mike", dateEnded: new Date(), priceStarted: 50, seller: seller1)).save(flush: true)
+        (new Listing(name: "sSABIN",dateEnded: futureDate, priceStarted: 50, seller: seller1)).save(flush: true)
+
 
 
         listing.addToBiddings(new Bidding(bidAmount: 600, bidder: bidder)).save(flush: true)

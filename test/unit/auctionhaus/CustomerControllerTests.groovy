@@ -6,7 +6,7 @@ import org.junit.*
 import grails.test.mixin.*
 
 @TestFor(CustomerController)
-@Mock(Customer)
+@Mock([Customer,Listing])
 class CustomerControllerTests {
 
 

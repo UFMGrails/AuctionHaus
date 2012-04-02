@@ -89,5 +89,6 @@ class CustomerTests {
         customer = new Customer(email: "abc@gmail.com", password: "abcdef")
         customer.validate()
         assert 0 == customer.errors.fieldErrorCount
+
     }
 }

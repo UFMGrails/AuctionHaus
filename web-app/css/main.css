@@ -47,10 +47,24 @@ body {
 	background-color: #abbf78;
 }
 
+
+
 #header {
     background: #7A0019;
     padding: 2em 1em 2em 1em;
     margin-bottom: 1em;
+}
+
+#footer {
+    background: #7A0019;
+    padding: 2em 1em 2em 1em;
+    margin-bottom: 1em;
+}
+
+#loginHeader {
+    float: right;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
 a.header-main:link, a.header-main:visited {
@@ -62,6 +76,19 @@ a.header-main:link, a.header-main:visited {
 .header-sub {
     color: #FFD453;
     font-size: 1.25em;
+    font-style: italic;
+}
+
+a.footer-main:link, a.footer-main:visited {
+    color: #FFD453;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.footer-sub {
+    color: #FFD453;
+    font-size: 0.75em;
+    float: right;
     font-style: italic;
 }
 
@@ -122,7 +149,7 @@ img {
 }
 
 .footer {
-	background: #7A0019;
+	background: #FFD453;
 	color: #7A0019;
 	clear: both;
 	font-size: 0.8em;

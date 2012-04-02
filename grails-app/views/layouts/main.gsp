@@ -24,4 +24,13 @@
 <g:render template="/layouts/header"/>
 <g:layoutBody />
 </body>
+
+<!-- L1  Footer   -->
+<div id="footer">
+    <p>
+    <div class="footer-sub">Copyright &copy; 2012 UFM AuctionHaus</div>
+    <div class="footer-sub">Version: <g:meta name="app.version"/></div>
+</p>
+</div>
 </html>
+

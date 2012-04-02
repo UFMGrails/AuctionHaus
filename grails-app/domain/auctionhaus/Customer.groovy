@@ -5,6 +5,7 @@ class Customer {
     String email
     String password
     Date dateCreated
+    String role = "author"
     
 
     //Customer as many listing and Biddings.
@@ -20,6 +21,7 @@ class Customer {
 
         //C-4: Password must be between 6-8 characters (unit test)
         password(size: 6..8, blank: false)
+        role(inList:["author", "admin"],blank: true)
 
     }
     
@@ -27,6 +29,9 @@ class Customer {
         return email
     }
 
+    String getCustomerName(){
+        return email.split('@')[0]
+    }
 
 
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="ujjwal-PC" id="0" name="ListingControllerTests" package="auctionhaus" tests="1" time="6.634" timestamp="2012-03-20T01:16:59">
+  <testsuite errors="0" failures="0" hostname="CFOIT200756262" id="0" name="CustomerControllerTests" package="auctionhaus" tests="1" time="6.708" timestamp="2012-04-02T18:34:46">
       <properties />
 
-      <testcase classname="auctionhaus.ListingControllerTests" name="testAddBids" time="6.58" />
+      <testcase classname="auctionhaus.CustomerControllerTests" name="testDelete" time="6.619" />
 
       <system-out><![CDATA[]]></system-out>
 
-      <system-err><![CDATA[--Output from testAddBids--
+      <system-err><![CDATA[--Output from testDelete--
 ]]></system-err>
 
   </testsuite>

@@ -15,7 +15,7 @@
 		<g:message code="customer.password.label" default="Password" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="password" maxlength="8" required="" value="${customerInstance?.password}"/>
+	<g:passwordField name="password" maxlength="8" required="" value="${customerInstance?.password}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'biddings', 'error')} ">

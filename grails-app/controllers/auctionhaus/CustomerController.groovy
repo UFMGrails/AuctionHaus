@@ -5,9 +5,43 @@ import org.springframework.dao.DataIntegrityViolationException
 class CustomerController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def customerService
+
+    def beforeInterceptor = [action:this.&auth, except:["login", "logout","authenticate","create"]]
+
+    def auth() {
+        if( !(session?.user?.role == "admin") ){
+            flash.message = "You must have an administrator privilege to perform this task."
+            redirect(action:"login")
+            return false
+        }
+    }
 
     def index() {
         redirect(action: "list", params: params)
+    }
+
+    def login={}
+
+    def authenticate={
+        Customer user = Customer.findByEmailAndPassword(params.email, params.password)
+        def targetUri = params.targetUri ?: "/"
+
+        if (user) {
+            session.putValue("user",user)
+            flash.message = "Hello ${user.email}"
+            redirect(controller: "Listing", action: 'list')
+        } else {
+            flash.message = "Login Failed. Please check your username and/or password. If you are first time user, please Register"
+            redirect(action: 'login')
+        }
+    }
+
+    def logout ={
+        flash.message = "Goodbye ${session.user.email}"
+        session.invalidate()
+        redirect(controller:"Listing", action:"list")
+
     }
 
     def list() {
@@ -15,19 +49,23 @@ class CustomerController {
         [customerInstanceList: Customer.list(params), customerInstanceTotal: Customer.count()]
     }
 
+    
     def create() {
         [customerInstance: new Customer(params)]
     }
 
+    //SRV-4: Refactor your Controllers from the previous assignments to use the service methods created in this section (unit test)
     def save() {
         def customerInstance = new Customer(params)
-        if (!customerInstance.save(flush: true)) {
+        try{
+            customerService.createNewCustomer(customerInstance)
+            flash.message = message(code: 'default.created.message', args: [message(code: 'customer.label', default: 'Customer'), customerInstance.id])
+            redirect(action: "show", id: customerInstance.id)
+        }catch(Exception e){
             render(view: "create", model: [customerInstance: customerInstance])
-            return
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'customer.label', default: 'Customer'), customerInstance.id])
-        redirect(action: "show", id: customerInstance.id)
+
     }
 
     def show() {
@@ -94,9 +132,9 @@ class CustomerController {
             //C-4: An existing customer can only be deleted through the web interface if they have 0 listings and 0 bids.
             // The system will present an error message to the user if the delete cannot be performed (unit test of the
             // controller action that has this logic)
-            if (((customerInstance.biddings == null)||
-                    (customerInstance.biddings.size() == 0)) && ((customerInstance.listings.size() == 0)
-            ||customerInstance.listings == null))
+            if (((customerInstance?.biddings == null)||
+                    (customerInstance?.biddings?.size() == 0)) && ((customerInstance?.listings?.size() == 0)
+            ||customerInstance?.listings == null))
             {
             customerInstance.delete(flush: true)
 			flash.message = message(code: 'default.deleted.message', args: [message(code: 'customer.label', default: 'Customer'), params.id])
