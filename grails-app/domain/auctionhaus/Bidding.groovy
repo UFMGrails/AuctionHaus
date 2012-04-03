@@ -17,6 +17,12 @@ class Bidding {
         listing cascade: 'refresh'
     }
 
+    static namedQueries = {
+        bidsAboutListing { listingid ->
+            eq 'listing', listingid
+        }
+    }
+
     static constraints = {
 
         //Bidding dateCreated shall be less than listing dateEnded

@@ -22,6 +22,8 @@ class ListingController {
         redirect(action: "list", params: params)
     }
 
+
+
     def list() {
 
 
@@ -83,6 +85,12 @@ class ListingController {
         redirect(action: 'show', id: params['listing.id'])
     }
 
+    def getBids = {
+        def listing = Listing.get(params.id)
+        render(template: 'bidslist',
+                model: [bidInstanceList: Bidding.bidsAboutListing(listing).list(max: params.max, sort: 'bidAmount', order: 'desc')]
+                        )
+    }
 
 
 

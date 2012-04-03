@@ -1,4 +1,3 @@
-
 <%@ page import="auctionhaus.Listing" %>
 <!doctype html>
 <html>
@@ -6,8 +5,18 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'listing.label', default: 'Listing')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
+        <g:javascript library='jquery' plugin='jquery'/>
+        <script type="text/javascript">
+        window.setInterval(update, 1000);
+
+        function update() {
+<g:remoteFunction action="getBids" update="BidsList" id="${fieldValue(bean: listingInstance, field: 'id')}"
+                  params="[max:10,order:asc]"/>
+        }
+    </script>
 	</head>
 	<body>
+
 		<a href="#show-listing" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
@@ -84,8 +93,16 @@
 
                     </li>
                 </g:if>
+
+                <tr class="prop">
+                    <td valign="top" class="name"><g:message code="listing.winningBids" default="Most Recent Bids"/>:</td>
+                    <td valign="top" style="text-align: left;" class="value" id="BidsList">
+                    </td>
+                </tr>
                 <!--L-7: The detail page for the listing allows a new bid to be placed (unit test of the controller action that handles this requirement)-->
                 <g:render template="addBids"/>
+
+
             </ol>
 			<g:form>
 				<fieldset class="buttons">
