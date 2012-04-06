@@ -236,4 +236,64 @@ class ListingControllerTests {
         assert Listing.get(listing.id) == null
         assert response.redirectedUrl == '/listing/list'
     }
+
+    //
+    //UI-4: The action of placing a new bid will display a
+    //message to the user indicating that the bid was successful (Controller Unit Test)
+    void testFlashAddBidSuccessful() {
+        def today = new Date()
+        def futureDate = today + 100
+
+        def seller = ((new Customer(email: "ujjwal76@gmail.com", password: "abcdef"))).save(flush:true)
+        assert 0 == seller.errors.errorCount
+        def listing = (new Listing(name: "Coke", description:"It's coke", dateEnded: futureDate, priceStarted: 10, seller: seller)).save(flush: true)
+        assert listing.errors.errorCount == 0
+        def bidder = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef"))).save(flush:true)
+        assert 0 == bidder.errors.errorCount
+
+        controller.listingService = new ListingService()
+
+        params['listing.id'] = listing.id
+        params.bidAmount = 60
+        session.user = bidder
+        //mockSession.user = bidder
+        controller.addBids()
+        def bids = Bidding.findAllByListing(listing)
+        assert bids.size() == 1
+        assert controller.flash.message == "default.successful.bid.submitted"
+    }
+
+    //UI-5: An error message will be displayed if placing a new bid is unsuccessful
+    // (for instance if the new bid amount does not pass validation requirements) (Controller Unit Test)
+    void testFlashAddBidFail() {
+        def today = new Date()
+        def futureDate = today + 100
+
+        def seller = ((new Customer(email: "ujjwal76@gmail.com", password: "abcdef"))).save(flush:true)
+        assert 0 == seller.errors.errorCount
+        def listing = (new Listing(name: "Coke", description:"It's coke", dateEnded: futureDate, priceStarted: 10, seller: seller)).save(flush: true)
+        assert listing.errors.errorCount == 0
+        def bidder = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef"))).save(flush:true)
+        assert 0 == bidder.errors.errorCount
+
+        controller.listingService = new ListingService()
+
+        params['listing.id'] = listing.id
+        params.bidAmount = 60
+        session.user = bidder
+        //mockSession.user = bidder
+        controller.addBids()
+        def bids = Bidding.findAllByListing(listing)
+        assert bids.size() == 1
+        assert controller.flash.message == "default.successful.bid.submitted"
+
+        response.reset()
+
+        params['listing.id'] = listing.id
+        params.bidAmount = 55
+        controller.addBids()
+        assert 1 == listing.biddings.size()
+        assert controller.flash.message == "default.unsuccessful.bid.submitted"
+    }
+
 }

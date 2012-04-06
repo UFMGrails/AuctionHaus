@@ -1,12 +1,25 @@
 import auctionhaus.Customer
 import auctionhaus.Listing
 import auctionhaus.Bidding
+import groovy.time.*
+import org.codehaus.groovy.runtime.TimeCategory
+
 
 class BootStrap {
 
     def init = { servletContext ->
         def today = new Date()
         def futureDate = today + 100
+
+
+        def a= new DatumDependentDuration(0, 0, 0, 0, 2, 0, 0)
+        def b=  new Date()
+        def twoMinExpired = a+b
+
+        def twoWeeksFromNow = GregorianCalendar.getInstance()
+        twoWeeksFromNow.add(Calendar.WEEK_OF_YEAR, 2)
+        twoWeeksFromNow = twoWeeksFromNow.getTime()
+
         def seller = ((new Customer(email: "ujjwal77@gmail.com", password: "abcdef",role: "author")).save(flush: true))
         def seller1 = ((new Customer(email: "sabin8@gmail.com", password: "abcdef",role: "author")).save(flush: true))
         def bidder = ((new Customer(email: "kancharam@gmail.com", password: "abcdef")).save(flush: true))
@@ -22,12 +35,8 @@ class BootStrap {
         (new Listing(name: "MW3", description:"No Scratch. Perfect Condition",dateEnded: futureDate, priceStarted: 50, seller: seller1)).save(flush: true)
         (new Listing(name: "MGS3", description:"No Scratch. Perfect Condition", dateEnded: futureDate, priceStarted: 50, dateCreated: today-5, seller: seller1)).save(flush: true)
         def listing3 = (new Listing(name: "Penny", dateEnded: futureDate, priceStarted: 50, dateCreated: today-9, seller: seller1)).save(flush: true)
-        (new Listing(name: "GroovyonGrails", description:"Very Used. Lot learned. Must have",dateEnded: futureDate+50, priceStarted: 1000, seller: bidder1)).save(flush: true)
-        (new Listing(name: "HDMI Cable", dateEnded: futureDate, priceStarted: 5, seller: bidder)).save(flush: true)
-        (new Listing(name: "Two and Half Men DVD",description:"No Charlie Sheen", dateEnded: futureDate+2, priceStarted: 45, seller: bidder2)).save(flush: true)
-        (new Listing(name: "Big Band Theory Season 1", dateEnded: futureDate, priceStarted: 50, seller: seller1)).save(flush: true)
         (new Listing(name: "Mike", dateEnded: new Date(), priceStarted: 50, seller: seller1)).save(flush: true)
-        (new Listing(name: "sSABIN",dateEnded: futureDate, priceStarted: 50, seller: seller1)).save(flush: true)
+        (new Listing(name: "NFL Mug", dateEnded: twoMinExpired, priceStarted: 50, seller: seller1)).save(flush: true)
 
 
 

@@ -9,7 +9,11 @@
         </g:hasErrors>
     </div>
 
-    <g:form name="addBids" action="addBids" method="post">
+    <!--UI-2: The action of placing a new bid on a listing will happen asynchronously, without leaving the page-->
+    <g:formRemote name="addBids" method="post" url="[action:'addBids']"
+                  update="[success:'bidslisting', failure:'addBids']"
+                  onSuccess="\$('div.message').show().text('Bid submitted succesfully!');"
+                  onFailure="\$('div.message').show()">
         <g:hiddenField name="listing.id" value="${listingInstance?.id}"/>
         <div class="dialog">
             <table>
@@ -28,5 +32,5 @@
 
 
 
-    </g:form>
+    </g:formRemote>
 </div>

@@ -1,6 +1,7 @@
 package auctionhaus
 
 import org.springframework.dao.DataIntegrityViolationException
+import javax.servlet.http.HttpServletResponse
 
 class ListingController {
 
@@ -9,7 +10,7 @@ class ListingController {
 
     //S-2: Viewing the main landing page and the listing detail page does not require that the user be logged in
     //S-3: Bidding on an item requires that the user be logged in
-    def beforeInterceptor = [action:this.&auth, except:["index", "list", "show"]]
+    def beforeInterceptor = [action:this.&auth, except:["index", "list", "show","getBids","getMostRecentBidPrice"]]
 
     def auth() {
         if(!session.user) {
@@ -45,7 +46,7 @@ class ListingController {
 
     def mylisting() {
         //M-2: The main landing page shows up to 5 listings at a time
-        //params.max = Math.min(params.max ? params.int('max') : 5, 100)
+        params.max = Math.min(params.max ? params.int('max') : 5, 100)
 
         //M-1: The main landing page shows listings sorted by the date they were created (most recent first)
         //If params is not already sorted or ordered
@@ -54,9 +55,8 @@ class ListingController {
 
         // M-4: Only listings with a end date/time that is in the future are visible on the main page
         //def listingInstance = Listing.list(params).findAll{it -> it.seller.email == session.user.email}
-        def listingInstance = Listing.findAllBySeller(session.user)
-        [listingInstanceList: listingInstance, listingInstanceTotal: Listing.countBySeller(session.user)
-        ]
+        def listingInstance = Listing.findAllBySeller(session.user, params)
+        [listingInstanceList: listingInstance, listingInstanceTotal: Listing.countBySeller(session.user)]
     }
 
 
@@ -75,23 +75,33 @@ class ListingController {
         try{
             listingService.addBidToListing(biddingInstance)
             flash.message = message(code: 'default.successful.bid.submitted', args: [message(code: 'listing.label', default: 'Listing'), params.id])
+            redirect(action: 'getBids', id: params['listing.id'], params: [max: 10])
 
         }
         catch(Exception ex)
         {
+            def listingInstance = Listing.findById(params['listing.id'])
             flash.message =  message(code: 'default.unsuccessful.bid.submitted', args: [message(code: 'listing.label', default: 'Listing'), params.id])
+            response.status = HttpServletResponse.SC_BAD_REQUEST
+            render(template: 'addBids', model: [listingInstance: listingInstance, biddingInstance: biddingInstance])
 
         }
-        redirect(action: 'show', id: params['listing.id'])
+
     }
 
-    def getBids = {
+    def getBids = {      
         def listing = Listing.get(params.id)
         render(template: 'bidslist',
-                model: [bidInstanceList: Bidding.bidsAboutListing(listing).list(max: params.max, sort: 'bidAmount', order: 'desc')]
-                        )
+                model: [bidInstanceList: Bidding.bidsAboutListing(listing).list(max: params.max, sort: 'bidAmount', order: 'desc'),
+                       minBidPrice: listing.minBidPrice])
+
     }
 
+    def getMostRecentBidPrice = {
+        def listing = Listing.get(params.id)
+        def bidData = Bidding.findAllByListing(listing, params)
+        render "Periodic update of new bid price is ${bidData[-1].bidAmount+0.50}"
+    }
 
 
     def create() {

@@ -13,7 +13,7 @@ class Listing {
     static hasMany = [biddings: Bidding]
     static belongsTo = [seller: Customer]
 
-    static transients = ['winningBidPrice']
+    static transients = ['winningBidPrice','minBidPrice']
 
     String toString(){
         return name
@@ -53,9 +53,18 @@ class Listing {
             return priceStarted
         }
     }
-
 }
+    boolean isExpired() {
+        dateEnded <= new Date()
+    }
 
+    BigDecimal getMinBidPrice() {
+        if (biddings) {
+            getWinningBidPrice() + 0.50
+        } else {
+            priceStarted
+        }
+    }
 
 }
 

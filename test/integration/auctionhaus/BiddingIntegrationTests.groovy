@@ -14,7 +14,7 @@ class BiddingIntegrationTests {
     void setUp() {
         seller = ((new Customer(email: "seller@gmail.com", password: "abcdef")).save(flush: true))
         bidder = new Customer(email: "bidder@gmail.com", password: "abcdef").save(flush: true)
-        listing = (new Listing(name: "TV", dateEnded: futureDate, priceStarted: 1.50, seller: seller)).save(flush: true)
+        listing = (new Listing(name: "SomethingNew", dateEnded: futureDate, priceStarted: 1.50, seller: seller)).save(flush: true)
     }
 
     @After
@@ -26,14 +26,14 @@ class BiddingIntegrationTests {
     void testBiddingIsSavedWhenListingIsSaved() {
 //B-6: When a Listing is saved, any new Bids added for the listing must be saved (integration test)
         //Bidding is unorder collections. bidding is added sequentially
-
-        listing.addToBiddings(new Bidding(bidAmount: 2.00, bidder: bidder)).save(flush: true)
-        listing.addToBiddings(new Bidding(bidAmount: 2.50, bidder: bidder)).save(flush: true)
-        listing.addToBiddings(new Bidding(bidAmount: 3.00, bidder: bidder)).save(flush: true)
-        listing.addToBiddings(new Bidding(bidAmount: 4.00, bidder: bidder)).save(flush: true)
-        listing.addToBiddings(new Bidding(bidAmount: 5.00, bidder: bidder)).save(flush: true)
-        listing.addToBiddings(new Bidding(bidAmount: 6.00, bidder: bidder)).save(flush: true)
-        assert 6 == Bidding.where {listing == listing}.count()
+        def listing1 = (new Listing(name: "SomethingNew", dateEnded: futureDate, priceStarted: 1.50, seller: seller)).save(flush: true)
+        listing1.addToBiddings(new Bidding(bidAmount: 2.00, bidder: bidder)).save(flush: true)
+        listing1.addToBiddings(new Bidding(bidAmount: 2.50, bidder: bidder)).save(flush: true)
+        listing1.addToBiddings(new Bidding(bidAmount: 3.00, bidder: bidder)).save(flush: true)
+        listing1.addToBiddings(new Bidding(bidAmount: 4.00, bidder: bidder)).save(flush: true)
+        listing1.addToBiddings(new Bidding(bidAmount: 5.00, bidder: bidder)).save(flush: true)
+        listing1.addToBiddings(new Bidding(bidAmount: 6.00, bidder: bidder)).save(flush: true)
+        assert 6 == Bidding.where {listing == listing1}.count()
     }
 
     @Test
@@ -44,6 +44,16 @@ class BiddingIntegrationTests {
         assert (new Bidding(bidAmount: listing.winningBidPrice + 0.50, bidder: bidder, listing: listing).validate())
         assert !(new Bidding(bidAmount: listing.winningBidPrice + 0.49, bidder: bidder, listing: listing).validate())
         assert (new Bidding(bidAmount: listing.winningBidPrice + 0.51, bidder: bidder, listing: listing).validate())
+    }
+
+    //UI-1The implementation of the lookup of these results must be done with a Named Query. (Integration Test)
+    public testBidsAboutListingNamedQuery() {
+        def listing2 = (new Listing(name: "SomethingNew", dateEnded: futureDate, priceStarted: 1.50, seller: seller)).save(flush: true)
+        listing2.addToBiddings(new Bidding(bidAmount: 2.00, bidder: bidder)).save(flush: true)
+        listing2.addToBiddings(new Bidding(bidAmount: 2.50, bidder: bidder)).save(flush: true)
+        def biddings = Bidding.bidsAboutListing(listing2).list()
+        assert 2 == biddings.size()
+
     }
 
 

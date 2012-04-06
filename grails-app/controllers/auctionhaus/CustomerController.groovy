@@ -7,7 +7,7 @@ class CustomerController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     def customerService
 
-    def beforeInterceptor = [action:this.&auth, except:["login", "logout","authenticate","create"]]
+    def beforeInterceptor = [action:this.&auth, except:["login", "logout","authenticate","register","saveRegistration"]]
 
     def auth() {
         if( !(session?.user?.role == "admin") ){
@@ -54,6 +54,27 @@ class CustomerController {
         [customerInstance: new Customer(params)]
     }
 
+    def register() {}
+
+    //SRV-4: Refactor your Controllers from the previous assignments to use the service methods created in this section (unit test)
+    def saveRegistration() {
+        def customerInstance = new Customer(params)
+        if (params.password != params.confirm) {
+            flash.message = "The passwords you entered do not match."
+            render(view: "register")
+        }
+        else {
+        try{
+            customerService.createNewCustomer(customerInstance)
+            flash.message = message(code: 'default.registered.message', args: [message(code: 'customer.label', default: 'Customer'), customerInstance.id])
+            redirect(action: "list", controller: "listing")
+        }catch(Exception e){
+            render(view: "register", model: [customerInstance: customerInstance])
+        }
+    }
+
+    }
+
     //SRV-4: Refactor your Controllers from the previous assignments to use the service methods created in this section (unit test)
     def save() {
         def customerInstance = new Customer(params)
@@ -64,8 +85,6 @@ class CustomerController {
         }catch(Exception e){
             render(view: "create", model: [customerInstance: customerInstance])
         }
-
-
     }
 
     def show() {

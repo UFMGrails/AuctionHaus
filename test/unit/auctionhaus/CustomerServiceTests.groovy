@@ -22,9 +22,5 @@ class CustomerServiceTests {
         def customer1 = new Customer(email: "ujjwal76@gmail.com", password: "abcdef")
         int id1 = service.createNewCustomer(customer1)
         assert id1 == 2
-
-      
-        
-
     }
 }

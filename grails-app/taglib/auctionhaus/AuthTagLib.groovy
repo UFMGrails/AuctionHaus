@@ -8,7 +8,7 @@ class AuthTagLib {
             out << """[${link(action:"mylisting", controller:"listing"){"My Listing"}}]"""
         } else {
             out << """[${link(action:"login", controller:"customer"){"Login"}}]"""
-            out << """[${link(action:"create", controller:"customer"){"Register"}}]"""
+            out << """[${link(action:"register", controller:"customer"){"Register"}}]"""
         }
     }
 }

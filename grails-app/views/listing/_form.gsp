@@ -34,36 +34,36 @@
 	<g:field type="number" name="priceStarted" required="" value="${fieldValue(bean: listingInstance, field: 'priceStarted')}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: listingInstance, field: 'seller', 'error')} required">
-	<label for="seller">
-		<g:message code="listing.seller.label" default="Seller" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="seller" name="seller.id" from="${auctionhaus.Customer.list()}" optionKey="id" required="" value="${listingInstance?.seller?.id}" class="many-to-one"/>
-</div>
+%{--<div class="fieldcontain ${hasErrors(bean: listingInstance, field: 'seller', 'error')} required">--}%
+	%{--<label for="seller">--}%
+		%{--<g:message code="listing.seller.label" default="Seller" />--}%
+		%{--<span class="required-indicator">*</span>--}%
+	%{--</label>--}%
+	%{--<g:select id="seller" name="seller.id" from="${auctionhaus.Customer.list()}" optionKey="id" required="" value="${listingInstance?.seller?.id}" class="many-to-one"/>--}%
+%{--</div>--}%
 
-<div class="fieldcontain ${hasErrors(bean: listingInstance, field: 'winner', 'error')} ">
-	<label for="winner">
-		<g:message code="listing.winner.label" default="Winner" />
-		
-	</label>
-	<g:select id="winner" name="winner.id" from="${auctionhaus.Customer.list()}" optionKey="id" value="${listingInstance?.winner?.id}" class="many-to-one" noSelection="['null': '']"/>
-</div>
+%{--<div class="fieldcontain ${hasErrors(bean: listingInstance, field: 'winner', 'error')} ">--}%
+	%{--<label for="winner">--}%
+		%{--<g:message code="listing.winner.label" default="Winner" />--}%
+		%{----}%
+	%{--</label>--}%
+	%{--<g:select id="winner" name="winner.id" from="${auctionhaus.Customer.list()}" optionKey="id" value="${listingInstance?.winner?.id}" class="many-to-one" noSelection="['null': '']"/>--}%
+%{--</div>--}%
 
-<div class="fieldcontain ${hasErrors(bean: listingInstance, field: 'biddings', 'error')} ">
-	<label for="biddings">
-		<g:message code="listing.biddings.label" default="Biddings" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${listingInstance?.biddings?}" var="b">
-    <li><g:link controller="bidding" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="bidding" action="create" params="['listing.id': listingInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'bidding.label', default: 'Bidding')])}</g:link>
-</li>
-</ul>
+%{--<div class="fieldcontain ${hasErrors(bean: listingInstance, field: 'biddings', 'error')} ">--}%
+	%{--<label for="biddings">--}%
+		%{--<g:message code="listing.biddings.label" default="Biddings" />--}%
+		%{----}%
+	%{--</label>--}%
+
+%{--<ul class="one-to-many">--}%
+%{--<g:each in="${listingInstance?.biddings?}" var="b">--}%
+    %{--<li><g:link controller="bidding" action="show" id="${b.id}">${b?.encodeAsHTML()}</g:link></li>--}%
+%{--</g:each>--}%
+%{--<li class="add">--}%
+%{--<g:link controller="bidding" action="create" params="['listing.id': listingInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'bidding.label', default: 'Bidding')])}</g:link>--}%
+%{--</li>--}%
+%{--</ul>--}%
 
 </div>
 

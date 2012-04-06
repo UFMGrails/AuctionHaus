@@ -12,7 +12,7 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.mylisting.label" args="[entityName]" /></g:link></li>
 			</ul>
 		</div>
 		<div id="list-listing" class="content scaffold-list" role="main">
@@ -50,8 +50,8 @@
 
             <!--M-3: If more than 5 listings exist, pagination links will be available to let the user page through the listings-->
 			<div class="pagination">
-				<g:paginate total="${listingInstanceTotal}" />
-			</div>
+            <g:paginate total="${listingInstanceTotal}" />
+        </div>
 		</div>
 	</body>
 </html>
