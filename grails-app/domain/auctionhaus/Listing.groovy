@@ -8,6 +8,7 @@ class Listing {
     Customer seller
     Customer winner
     Date dateCreated
+    Boolean notificationSent=false
     public static final BigDecimal minBidIncrement = 0.5
 
     static hasMany = [biddings: Bidding]

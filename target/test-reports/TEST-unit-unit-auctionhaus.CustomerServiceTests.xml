@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="ujjwal-PC" name="auctionhaus.CustomerServiceTests" tests="1" time="2.651" timestamp="2012-04-06T00:28:54">
-  <properties />
-  <testcase classname="auctionhaus.CustomerServiceTests" name="testaddNewCustomer" time="2.602" />
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[--Output from testaddNewCustomer--
-]]></system-err>
-</testsuite>

@@ -120,14 +120,19 @@
         <h1><g:message code="listing.expired" default="This listing is expired!"/></h1>
     </g:else>
 
-            </ol>
+
+             <g:if test="${listingInstance.seller} == ${session.user}">
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${listingInstance?.id}" />
-					<g:link class="edit" action="edit" id="${listingInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
+                    <g:hiddenField name="user" value="${session.user}" />
+                    <g:hiddenField name="seller" value="${listingInstance.seller}" />
+                <g:link class="edit" action="edit" id="${listingInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 			</g:form>
+             </g:if>
+
+    %{--<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />--}%
+
 		</div>
 	</body>
 </html>

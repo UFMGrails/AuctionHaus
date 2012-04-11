@@ -13,9 +13,9 @@ class Bidding {
         return bidAmount
     }
 
-    static mapping = {
-        listing cascade: 'refresh'
-    }
+//    static mapping = {
+//        listing cascade: 'refresh'
+//    }
 
     static namedQueries = {
         bidsAboutListing { listingid ->
