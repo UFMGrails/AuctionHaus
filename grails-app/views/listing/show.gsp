@@ -83,6 +83,14 @@
             </tr>
 
             <tr class="prop">
+                <td valign="top" class="name"><g:message code="listing.priceStarted" default="Beginning Listing Price"/>:</td>
+
+                <td valign="top" class="value">${fieldValue(bean: listingInstance, field: "priceStarted")}</td>
+
+            </tr>
+
+
+            <tr class="prop">
                 <td valign="top" class="name"><g:message code="listing.description" default="Description"/>:</td>
 
                 <td valign="top" class="value">${fieldValue(bean: listingInstance, field: "description")}</td>

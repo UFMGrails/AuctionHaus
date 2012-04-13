@@ -14,12 +14,10 @@
         Unit Test Results
      - Failed tests</h1>
 <p class="intro">
-                        Executed
-                        39
-                        tests
+                        A single test executed
                     
                         with
-                        2 errors
+                        one error
                         .
                     </p>
 </div>
@@ -45,80 +43,31 @@
 <div class="clear"></div>
 <div class="testsuite error">
 <div class="header">
-<h2>ListingControllerTests</h2>
+<h2>BiddingTests</h2>
 <h3>
-                        Executed
-                        5
-                        tests
+                        A single test executed
                     
                         with
-                        2 errors
+                        one error
                         .
                     </h3>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testIndex">
+<div class="testcase clearfix error grid_8 alpha omega" data-name="testBidsAreRequiredToBeForListing">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">testIndex</b>
+<span class="icon error"></span><b class="testname message error">testBidsAreRequiredToBeForListing</b>
 </p>
-<p class="summary">Executed in 0.31 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testAddBids">
-<div class="grid_3 alpha">
-<p>
-<span class="icon error"></span><b class="testname message error">testAddBids</b>
-</p>
-<p class="summary">Executed in 2.645 seconds.</p>
+<p class="summary">Executed in 1.303 seconds.</p>
 </div>
 <div class="grid_5 omega outputinfo">
 <div class="details">
 <p>
-<b class="message">Cannot invoke method size() on null object</b>
+<b class="message">No such property: bidding for class: auctionhaus.BiddingTests
+Possible solutions: bidder, listing</b>
 </p>
-<pre>java.lang.NullPointerException: Cannot invoke method size() on null object
-	at auctionhaus.ListingControllerTests.testAddBids(ListingControllerTests.groovy:47)
-</pre>
-</div>
-</div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testFlashAddBidFail">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">testFlashAddBidFail</b>
-</p>
-<p class="summary">Executed in 1.47 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testFlashAddBidSuccessful">
-<div class="grid_3 alpha">
-<p>
-<span class="icon success"></span><b class="testname message success">testFlashAddBidSuccessful</b>
-</p>
-<p class="summary">Executed in 0.245 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo"></div>
-<div class="clear"></div>
-</div>
-<div class="testcase clearfix error grid_8 alpha omega" data-name="testInvalidAddBids">
-<div class="grid_3 alpha">
-<p>
-<span class="icon error"></span><b class="testname message error">testInvalidAddBids</b>
-</p>
-<p class="summary">Executed in 1.22 seconds.</p>
-</div>
-<div class="grid_5 omega outputinfo">
-<div class="details">
-<p>
-<b class="message">Cannot invoke method size() on null object</b>
-</p>
-<pre>java.lang.NullPointerException: Cannot invoke method size() on null object
-	at auctionhaus.ListingControllerTests.testInvalidAddBids(ListingControllerTests.groovy:80)
+<pre>groovy.lang.MissingPropertyException: No such property: bidding for class: auctionhaus.BiddingTests
+Possible solutions: bidder, listing
+	at auctionhaus.BiddingTests.testBidsAreRequiredToBeForListing(BiddingTests.groovy:48)
 </pre>
 </div>
 </div>
@@ -127,20 +76,11 @@
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">--Output from testIndex--
---Output from testAddBids--
---Output from testFlashAddBidFail--
---Output from testFlashAddBidSuccessful--
---Output from testInvalidAddBids--
-</pre>
+<pre class="stdout"></pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
-<pre class="syserr">--Output from testIndex--
---Output from testAddBids--
---Output from testFlashAddBidFail--
---Output from testFlashAddBidSuccessful--
---Output from testInvalidAddBids--
+<pre class="syserr">--Output from testBidsAreRequiredToBeForListing--
 </pre>
 </div>
 </div>

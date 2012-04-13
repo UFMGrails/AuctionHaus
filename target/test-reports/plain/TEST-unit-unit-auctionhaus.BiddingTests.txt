@@ -1,22 +1,14 @@
 Testsuite: auctionhaus.BiddingTests
-Tests run: 5, Failures: 0, Errors: 0, Time elapsed: 1.23 sec
-------------- Standard Output ---------------
---Output from testListingHasListOfBids--
---Output from testDateCreatedIsAssigned--
---Output from testAmountIsRequired--
---Output from testBidsAreRequiredToBeForListing--
---Output from testBidsAreRequiredToHaveABidder--
-------------- ---------------- ---------------
+Tests run: 1, Failures: 0, Errors: 1, Time elapsed: 1.359 sec
 ------------- Standard Error -----------------
---Output from testListingHasListOfBids--
---Output from testDateCreatedIsAssigned--
---Output from testAmountIsRequired--
 --Output from testBidsAreRequiredToBeForListing--
---Output from testBidsAreRequiredToHaveABidder--
 ------------- ---------------- ---------------
 
-Testcase: testListingHasListOfBids took 0.6 sec
-Testcase: testDateCreatedIsAssigned took 0.05 sec
-Testcase: testAmountIsRequired took 0.08 sec
-Testcase: testBidsAreRequiredToBeForListing took 0.27 sec
-Testcase: testBidsAreRequiredToHaveABidder took 0.05 sec
+Testcase: testBidsAreRequiredToBeForListing took 1.295 sec
+	Caused an ERROR
+No such property: bidding for class: auctionhaus.BiddingTests
+Possible solutions: bidder, listing
+groovy.lang.MissingPropertyException: No such property: bidding for class: auctionhaus.BiddingTests
+Possible solutions: bidder, listing
+	at auctionhaus.BiddingTests.testBidsAreRequiredToBeForListing(BiddingTests.groovy:48)
+

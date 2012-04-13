@@ -2,7 +2,7 @@
 <head>
 <META http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>
-                    Test - CustomerIntegrationTests</title>
+                    Test - BiddingTests</title>
 <link rel="shortcut icon" href="http://grails.org/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" title="Style" href="../stylesheet.css">
 </head>
@@ -12,7 +12,7 @@
 <a title="Home" href="../index.html">
 <div class="grailslogo"></div>
 </a>
-<h1>CustomerIntegrationTests</h1>
+<h1>BiddingTests</h1>
 <h2>Package: auctionhaus</h2>
 </div>
 <div class="grid_2">
@@ -35,34 +35,46 @@
 </nav>
 </div>
 <div class="clear"></div>
-<div class="testsuite success">
+<div class="testsuite error">
 <div class="header">
-<h2>CustomerIntegrationTests</h2>
+<h2>BiddingTests</h2>
 <h3>
                         A single test executed
                     
-                        without a single error or failure!
+                        with
+                        one error
+                        .
                     </h3>
 </div>
-<div class="testcase clearfix success grid_8 alpha omega" data-name="testEmailIsUnique">
+<div class="testcase clearfix error grid_8 alpha omega" data-name="testBidsAreRequiredToBeForListing">
 <div class="grid_3 alpha">
 <p>
-<span class="icon success"></span><b class="testname message success">testEmailIsUnique</b>
+<span class="icon error"></span><b class="testname message error">testBidsAreRequiredToBeForListing</b>
 </p>
-<p class="summary">Executed in 0.045 seconds.</p>
+<p class="summary">Executed in 1.303 seconds.</p>
 </div>
-<div class="grid_5 omega outputinfo"></div>
+<div class="grid_5 omega outputinfo">
+<div class="details">
+<p>
+<b class="message">No such property: bidding for class: auctionhaus.BiddingTests
+Possible solutions: bidder, listing</b>
+</p>
+<pre>groovy.lang.MissingPropertyException: No such property: bidding for class: auctionhaus.BiddingTests
+Possible solutions: bidder, listing
+	at auctionhaus.BiddingTests.testBidsAreRequiredToBeForListing(BiddingTests.groovy:48)
+</pre>
+</div>
+</div>
 <div class="clear"></div>
 </div>
 <div class="clearfix output footer">
 <div class="sysout">
 <h2>Standard output</h2>
-<pre class="stdout">--Output from testEmailIsUnique--
-</pre>
+<pre class="stdout"></pre>
 </div>
 <div class="syserr">
 <h2>System error</h2>
-<pre class="syserr">--Output from testEmailIsUnique--
+<pre class="syserr">--Output from testBidsAreRequiredToBeForListing--
 </pre>
 </div>
 </div>

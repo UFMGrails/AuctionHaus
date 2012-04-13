@@ -1,2 +1,0 @@
---Output from testaddBidToListing--
---Output from testaddNewListing--
