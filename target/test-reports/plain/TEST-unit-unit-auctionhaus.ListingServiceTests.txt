@@ -1,0 +1,13 @@
+Testsuite: auctionhaus.ListingServiceTests
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 0.405 sec
+------------- Standard Output ---------------
+--Output from testaddBidToListing--
+--Output from testaddNewListing--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testaddBidToListing--
+--Output from testaddNewListing--
+------------- ---------------- ---------------
+
+Testcase: testaddBidToListing took 0.22 sec
+Testcase: testaddNewListing took 0.11 sec

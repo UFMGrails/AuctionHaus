@@ -22,7 +22,7 @@ class CustomerControllerTests {
         assert "/customer/list" == response.redirectedUrl
     }
 
-    void testList() {
+   /* void testList() {
 
         def model = controller.list()
 
@@ -134,7 +134,7 @@ class CustomerControllerTests {
         assert model.customerInstance != null
         assert model.customerInstance.errors.getFieldError('version')
         assert flash.message != null
-    }
+    }*/
 
     void testDelete() {
         def today = new Date()

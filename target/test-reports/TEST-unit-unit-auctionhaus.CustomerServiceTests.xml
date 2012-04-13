@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.CustomerServiceTests" tests="1" time="0.31" timestamp="2012-04-12T23:55:45">
+  <properties />
+  <testcase classname="auctionhaus.CustomerServiceTests" name="testaddNewCustomer" time="0.235" />
+  <system-out><![CDATA[--Output from testaddNewCustomer--
+]]></system-out>
+  <system-err><![CDATA[--Output from testaddNewCustomer--
+]]></system-err>
+</testsuite>

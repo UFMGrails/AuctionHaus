@@ -47,9 +47,10 @@ class BiddingTests {
 
     void testBidsAreRequiredToBeForListing() {
         //B-2: Bids are required to be for a Listing (unit test)
-        def bidding = new Bidding(bidAmount: 2.50, bidder: bidder)
+        mockForConstraintsTests(Bidding)
+        def bidding =new Bidding()
         bidding.validate()
-        assert "nullable" == bidding.errors["listing"].code
+        assert "nullable" == bidding.errors["listing"]
     }
 
 

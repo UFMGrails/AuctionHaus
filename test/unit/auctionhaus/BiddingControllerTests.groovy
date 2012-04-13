@@ -21,7 +21,7 @@ class BiddingControllerTests {
         assert "/bidding/list" == response.redirectedUrl
     }
 
-    void testList() {
+    /*void testList() {
 
         def model = controller.list()
 
@@ -155,5 +155,5 @@ class BiddingControllerTests {
         assert Bidding.count() == 0
         assert Bidding.get(bidding.id) == null
         assert response.redirectedUrl == '/bidding/list'
-    }
+    }*/
 }

@@ -101,7 +101,7 @@ class ListingControllerTests {
 
     }
 
-    void testList() {
+    /*void testList() {
 
         def model = controller.list()
 
@@ -235,7 +235,7 @@ class ListingControllerTests {
         assert Listing.count() == 0
         assert Listing.get(listing.id) == null
         assert response.redirectedUrl == '/listing/list'
-    }
+    }*/
 
     //
     //UI-4: The action of placing a new bid will display a

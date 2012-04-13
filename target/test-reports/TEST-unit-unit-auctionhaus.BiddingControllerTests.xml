@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.BiddingControllerTests" tests="1" time="4.635" timestamp="2012-04-12T23:55:37">
+  <properties />
+  <testcase classname="auctionhaus.BiddingControllerTests" name="testIndex" time="4.445" />
+  <system-out><![CDATA[--Output from testIndex--
+]]></system-out>
+  <system-err><![CDATA[--Output from testIndex--
+]]></system-err>
+</testsuite>

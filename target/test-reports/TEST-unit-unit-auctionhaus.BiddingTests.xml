@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.BiddingTests" tests="5" time="1.23" timestamp="2012-04-12T23:55:41">
+  <properties />
+  <testcase classname="auctionhaus.BiddingTests" name="testListingHasListOfBids" time="0.6" />
+  <testcase classname="auctionhaus.BiddingTests" name="testDateCreatedIsAssigned" time="0.05" />
+  <testcase classname="auctionhaus.BiddingTests" name="testAmountIsRequired" time="0.08" />
+  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToBeForListing" time="0.27" />
+  <testcase classname="auctionhaus.BiddingTests" name="testBidsAreRequiredToHaveABidder" time="0.05" />
+  <system-out><![CDATA[--Output from testListingHasListOfBids--
+--Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
+--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
+]]></system-out>
+  <system-err><![CDATA[--Output from testListingHasListOfBids--
+--Output from testDateCreatedIsAssigned--
+--Output from testAmountIsRequired--
+--Output from testBidsAreRequiredToBeForListing--
+--Output from testBidsAreRequiredToHaveABidder--
+]]></system-err>
+</testsuite>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="user-HP" name="auctionhaus.CustomerTests" tests="7" time="0.525" timestamp="2012-04-12T23:55:45">
+  <properties />
+  <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsRequired" time="0.07" />
+  <testcase classname="auctionhaus.CustomerTests" name="testEmailIsRequired" time="0.04" />
+  <testcase classname="auctionhaus.CustomerTests" name="testDateCreatedIsRequired" time="0.05" />
+  <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsBelowMax" time="0.065" />
+  <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsAboveMin" time="0.055" />
+  <testcase classname="auctionhaus.CustomerTests" name="testEmailIsValid" time="0.07" />
+  <testcase classname="auctionhaus.CustomerTests" name="testPasswordIsBetweenRightSize" time="0.045" />
+  <system-out><![CDATA[--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsBelowMax--
+--Output from testPasswordIsAboveMin--
+--Output from testEmailIsValid--
+--Output from testPasswordIsBetweenRightSize--
+]]></system-out>
+  <system-err><![CDATA[--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsBelowMax--
+--Output from testPasswordIsAboveMin--
+--Output from testEmailIsValid--
+--Output from testPasswordIsBetweenRightSize--
+]]></system-err>
+</testsuite>

@@ -1,0 +1,28 @@
+Testsuite: auctionhaus.CustomerTests
+Tests run: 7, Failures: 0, Errors: 0, Time elapsed: 0.525 sec
+------------- Standard Output ---------------
+--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsBelowMax--
+--Output from testPasswordIsAboveMin--
+--Output from testEmailIsValid--
+--Output from testPasswordIsBetweenRightSize--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testPasswordIsRequired--
+--Output from testEmailIsRequired--
+--Output from testDateCreatedIsRequired--
+--Output from testPasswordIsBelowMax--
+--Output from testPasswordIsAboveMin--
+--Output from testEmailIsValid--
+--Output from testPasswordIsBetweenRightSize--
+------------- ---------------- ---------------
+
+Testcase: testPasswordIsRequired took 0.07 sec
+Testcase: testEmailIsRequired took 0.04 sec
+Testcase: testDateCreatedIsRequired took 0.05 sec
+Testcase: testPasswordIsBelowMax took 0.065 sec
+Testcase: testPasswordIsAboveMin took 0.055 sec
+Testcase: testEmailIsValid took 0.07 sec
+Testcase: testPasswordIsBetweenRightSize took 0.045 sec

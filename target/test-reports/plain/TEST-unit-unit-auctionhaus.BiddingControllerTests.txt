@@ -1,0 +1,10 @@
+Testsuite: auctionhaus.BiddingControllerTests
+Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 4.635 sec
+------------- Standard Output ---------------
+--Output from testIndex--
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+--Output from testIndex--
+------------- ---------------- ---------------
+
+Testcase: testIndex took 4.45 sec

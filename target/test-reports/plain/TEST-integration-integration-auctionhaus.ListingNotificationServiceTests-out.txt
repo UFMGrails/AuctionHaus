@@ -1,0 +1,5 @@
+--Output from testListingEndedSendJMS--
+Listing ended call for Cup
+sendListingEndedJMS for Cup
+exception: java.lang.NullPointerException: Cannot invoke method send() on null object
+false

@@ -1,0 +1,2 @@
+--Output from testIndex--
+--Output from testDelete--
